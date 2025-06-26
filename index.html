@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Godfrey Mumbi Academy</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+<style>
+:root {
+--dark-bg: #1a2233;
+--title-color: #f1c40f;
+--list-color: #dfe6f1;
+--btn-bg: #3498db;
+--btn-hover: #2573a8;
+--yt: #ff0000;
+--wa: #25d366;
+--mail: #d44638;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+font-family: "Segoe UI", sans-serif;
+background: var(--dark-bg);
+color: #ecf0f1;
+display: flex;
+flex-direction: column;
+text-align: center;
+padding: 1rem;
+overflow: hidden;
+height: 100vh;
+justify-content: center;
+}
+
+header h1 {
+font-size: 1.9rem;
+margin-bottom: 0.4rem;
+}
+
+h2 {
+font-size: 1.25rem;
+margin-bottom: 0.4rem;
+letter-spacing: 1px;
+}
+
+ul {
+list-style: none;
+}
+
+ul li {
+color: var(--list-color);
+font-weight: 600;
+margin: 0.15rem 0;
+}
+
+.subjects li:nth-child(1) { font-size: 1.2rem; }
+.subjects li:nth-child(2),
+.subjects li:nth-child(3) { font-size: 1.1rem; }
+.subjects li:nth-child(4),
+.subjects li:nth-child(5) { font-size: 1.05rem; }
+
+.tips li:nth-child(1) { font-size: 1.15rem; }
+.tips li:nth-child(2) { font-size: 1.1rem; }
+.tips li:nth-child(3) { font-size: 1.05rem; }
+
+.social-icons {
+display: flex;
+justify-content: center;
+gap: 2rem;
+margin-top: 0.6rem;
+}
+
+.social-icons a {
+text-decoration: none;
+display: flex;
+flex-direction: column;
+align-items: center;
+transition: transform 0.25s;
+}
+
+.social-icons a:hover {
+transform: scale(1.1);
+}
+
+.social-icons i {
+font-size: 2rem;
+}
+
+.fa-whatsapp { color: var(--wa); }
+.fa-youtube { color: var(--yt); }
+.fa-envelope { color: var(--mail); }
+
+.social-icons span {
+margin-top: 0.2rem;
+font-size: 0.8rem;
+font-weight: 700;
+color: var(--list-color);
+}
+
+.login-btn {
+background: var(--btn-bg);
+color: #fff;
+border: none;
+border-radius: 6px;
+padding: 0.55rem 1.1rem;
+margin-top: 0.6rem;
+cursor: pointer;
+font-size: 0.9rem;
+transition: background 0.25s, transform 0.25s;
+}
+
+.login-btn:hover {
+background: var(--btn-hover);
+transform: translateY(-2px);
+}
+
+footer {
+font-size: 0.75rem;
+margin-top: 0.6rem;
+}
+</style>
+</head>
+<body>
+<header>
+<h1>Welcome to Godfrey Mumbi Academy</h1>
+</header>
+
+<main>
+<section>
+<h2 style="color:#9b59b6;">WE OFFER THE FOLLOWING:</h2>
+<h2 style="color:#3498db;">SUBJECTS</h2>
+<ul class="subjects">
+<li>📘 English</li>
+<li>🔬 Science</li>
+<li>🧬 Biology</li>
+<li>⚗️ Chemistry</li>
+<li>➗ Mathematics</li>
+</ul>
+</section>
+
+<div style="height:0.6rem;"></div>
+
+<section>
+<h2 style="color:#e67e22;">TIPS</h2>
+<ul class="tips">
+<li>📝 Preparation for Exams</li>
+<li>🧠 Study Smart, Not Just Hard</li>
+<li>🏆 Get Great Results in Secondary School</li>
+</ul>
+<button class="login-btn" onclick="alert('Login feature coming soon!');">
+<i class="fas fa-sign-in-alt"></i> Login
+</button>
+</section>
+
+<section class="social-icons">
+<a href="https://wa.me/260976125340" target="_blank">
+<i class="fab fa-whatsapp"></i>
+<span>WhatsApp</span>
+</a>
+<a href="https://www.youtube.com/@GODFREYMUMBIACADEMY" target="_blank">
+<i class="fab fa-youtube"></i>
+<span>YouTube</span>
+</a>
+<a href="mailto:gm2860702@gmail.com">
+<i class="fas fa-envelope"></i>
+<span>Email</span>
+</a>
+</section>
+</main>
+
+<footer>
+© 2025 Godfrey Mumbi Academy. All rights reserved.
+</footer>
+</body>
+</html>
