@@ -1,174 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Godfrey Mumbi Academy</title>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
-<style>
-:root {
---dark-bg: #1a2233;
---title-color: #f1c40f;
---list-color: #dfe6f1;
---btn-bg: #3498db;
---btn-hover: #2573a8;
---yt: #ff0000;
---wa: #25d366;
---mail: #d44638;
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GMA | Student Dashboard</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --bg-page: #ffffff;
+      --card-bg: #f9f9f9;
+      --text-dark: #1f2d3d;
+      --english: #3498db;
+      --science: #1abc9c;
+      --biology: #9b59b6;
+      --chemistry: #e67e22;
+      --math: #f39c12;
+      --footer: #ff7f18;
+    }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-font-family: "Segoe UI", sans-serif;
-background: var(--dark-bg);
-color: #ecf0f1;
-display: flex;
-flex-direction: column;
-text-align: center;
-padding: 1rem;
-overflow: hidden;
-height: 100vh;
-justify-content: center;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-header h1 {
-font-size: 1.9rem;
-margin-bottom: 0.4rem;
-}
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: var(--bg-page);
+      color: var(--text-dark);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
 
-h2 {
-font-size: 1.25rem;
-margin-bottom: 0.4rem;
-letter-spacing: 1px;
-}
+    header {
+      text-align: center;
+      padding: 1.5rem 1rem 1rem;
+    }
 
-ul {
-list-style: none;
-}
+    header h1 {
+      font-size: 2rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
 
-ul li {
-color: var(--list-color);
-font-weight: 600;
-margin: 0.15rem 0;
-}
+    main {
+      flex: 1 1 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      padding: 1rem;
+      max-width: 1400px;
+      width: 100%;
+      margin: 0 auto;
+    }
 
-.subjects li:nth-child(1) { font-size: 1.2rem; }
-.subjects li:nth-child(2),
-.subjects li:nth-child(3) { font-size: 1.1rem; }
-.subjects li:nth-child(4),
-.subjects li:nth-child(5) { font-size: 1.05rem; }
+    .card {
+      background: var(--card-bg);
+      border-radius: 14px;
+      padding: 1rem 1rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
 
-.tips li:nth-child(1) { font-size: 1.15rem; }
-.tips li:nth-child(2) { font-size: 1.1rem; }
-.tips li:nth-child(3) { font-size: 1.05rem; }
+    .bar {
+      height: 5px;
+      width: 100%;
+      border-radius: 10px 10px 0 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
 
-.social-icons {
-display: flex;
-justify-content: center;
-gap: 2rem;
-margin-top: 0.6rem;
-}
+    .card h2 {
+      text-align: center;
+      font-size: 1.3rem;
+    }
 
-.social-icons a {
-text-decoration: none;
-display: flex;
-flex-direction: column;
-align-items: center;
-transition: transform 0.25s;
-}
+    .section {
+      background: white;
+      border-radius: 8px;
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+    }
 
-.social-icons a:hover {
-transform: scale(1.1);
-}
+    .section h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
 
-.social-icons i {
-font-size: 2rem;
-}
+    details {
+      margin-top: 0.3rem;
+    }
 
-.fa-whatsapp { color: var(--wa); }
-.fa-youtube { color: var(--yt); }
-.fa-envelope { color: var(--mail); }
+    summary {
+      font-weight: 600;
+      cursor: pointer;
+    }
 
-.social-icons span {
-margin-top: 0.2rem;
-font-size: 0.8rem;
-font-weight: 700;
-color: var(--list-color);
-}
+    .sub-list {
+      margin-top: 0.5rem;
+      padding-left: 1rem;
+    }
 
-.login-btn {
-background: var(--btn-bg);
-color: #fff;
-border: none;
-border-radius: 6px;
-padding: 0.55rem 1.1rem;
-margin-top: 0.6rem;
-cursor: pointer;
-font-size: 0.9rem;
-transition: background 0.25s, transform 0.25s;
-}
+    .sub-list a {
+      display: block;
+      margin-bottom: 0.3rem;
+      text-decoration: none;
+      color: var(--text-dark);
+    }
 
-.login-btn:hover {
-background: var(--btn-hover);
-transform: translateY(-2px);
-}
+    .btn {
+      display: inline-block;
+      padding: 0.4rem 1rem;
+      border: none;
+      border-radius: 6px;
+      background: var(--accent);
+      color: white;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+    }
 
-footer {
-font-size: 0.75rem;
-margin-top: 0.6rem;
-}
-</style>
+    footer {
+      background: var(--footer);
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      font-style: italic;
+      font-weight: 600;
+      transform: skewY(-2deg);
+      box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    footer span {
+      display: inline-block;
+      transform: skewY(2deg);
+    }
+
+    .english { --accent: var(--english); }
+    .science { --accent: var(--science); }
+    .biology { --accent: var(--biology); }
+    .chemistry { --accent: var(--chemistry); }
+    .math { --accent: var(--math); }
+    .english .bar { background: var(--english); }
+    .science .bar { background: var(--science); }
+    .biology .bar { background: var(--biology); }
+    .chemistry .bar { background: var(--chemistry); }
+    .math .bar { background: var(--math); }
+    .english h2, .science h2, .biology h2, .chemistry h2, .math h2 { color: var(--accent); }
+  </style>
 </head>
 <body>
-<header>
-<h1>Welcome to Godfrey Mumbi Academy</h1>
-</header>
-
-<main>
-<section>
-<h2 style="color:#9b59b6;">WE OFFER THE FOLLOWING:</h2>
-<h2 style="color:#3498db;">SUBJECTS</h2>
-<ul class="subjects">
-<li>📘 English</li>
-<li>🔬 Science</li>
-<li>🧬 Biology</li>
-<li>⚗️ Chemistry</li>
-<li>➗ Mathematics</li>
-</ul>
-</section>
-
-<div style="height:0.6rem;"></div>
-
-<section>
-<h2 style="color:#e67e22;">TIPS</h2>
-<ul class="tips">
-<li>📝 Preparation for Exams</li>
-<li>🧠 Study Smart, Not Just Hard</li>
-<li>🏆 Get Great Results in Secondary School</li>
-</ul>
-<button class="login-btn" onclick="alert('Login feature coming soon!');">
-<i class="fas fa-sign-in-alt"></i> Login
-</button>
-</section>
-
-<section class="social-icons">
-<a href="https://wa.me/260976125340" target="_blank">
-<i class="fab fa-whatsapp"></i>
-<span>WhatsApp</span>
-</a>
-<a href="https://www.youtube.com/@GODFREYMUMBIACADEMY" target="_blank">
-<i class="fab fa-youtube"></i>
-<span>YouTube</span>
-</a>
-<a href="mailto:gm2860702@gmail.com">
-<i class="fas fa-envelope"></i>
-<span>Email</span>
-</a>
-</section>
-</main>
-
-<footer>
-© 2025 Godfrey Mumbi Academy. All rights reserved.
-</footer>
+  <header>
+    <h1>Student Dashboard - Godfrey Mumbi Academy</h1>
+  </header>
+  <main>
+    <div class="card english">
+      <div class="bar"></div>
+      <h2>English</h2>
+      <div class="section"><h3>🎞 Videos</h3><a class="btn" href="#">Watch</a></div>
+      <div class="section">
+        <details>
+          <summary>📚 Materials</summary>
+          <div class="sub-list">
+            <a href="#">📄 Pamphlets</a>
+            <a href="#">📘 Textbooks</a>
+          </div>
+        </details>
+      </div>
+      <div class="section"><h3>📝 Test Yourself</h3><a class="btn" href="#">Try Quiz</a></div>
+    </div>
+    <div class="card science">
+      <div class="bar"></div>
+      <h2>Science</h2>
+      <div class="section"><h3>🎞 Videos</h3><a class="btn" href="#">Watch</a></div>
+      <div class="section">
+        <details>
+          <summary>📚 Materials</summary>
+          <div class="sub-list">
+            <a href="#">📄 Pamphlets</a>
+            <a href="#">📘 Textbooks</a>
+          </div>
+        </details>
+      </div>
+      <div class="section"><h3>🧪 Test Yourself</h3><a class="btn" href="#">Try Quiz</a></div>
+    </div>
+    <div class="card biology">
+      <div class="bar"></div>
+      <h2>Biology</h2>
+      <div class="section"><h3>🎞 Videos</h3><a class="btn" href="#">Watch</a></div>
+      <div class="section">
+        <details>
+          <summary>📚 Materials</summary>
+          <div class="sub-list">
+            <a href="#">📄 Pamphlets</a>
+            <a href="#">📘 Textbooks</a>
+          </div>
+        </details>
+      </div>
+      <div class="section"><h3>🔬 Test Yourself</h3><a class="btn" href="#">Try Quiz</a></div>
+    </div>
+    <div class="card chemistry">
+      <div class="bar"></div>
+      <h2>Chemistry</h2>
+      <div class="section"><h3>🎞 Videos</h3><a class="btn" href="#">Watch</a></div>
+      <div class="section">
+        <details>
+          <summary>📚 Materials</summary>
+          <div class="sub-list">
+            <a href="#">📄 Pamphlets</a>
+            <a href="#">📘 Textbooks</a>
+          </div>
+        </details>
+      </div>
+      <div class="section"><h3>🧪 Test Yourself</h3><a class="btn" href="#">Try Quiz</a></div>
+    </div>
+    <div class="card math">
+      <div class="bar"></div>
+      <h2>Mathematics</h2>
+      <div class="section"><h3>🎞 Videos</h3><a class="btn" href="#">Watch</a></div>
+      <div class="section">
+        <details>
+          <summary>📚 Materials</summary>
+          <div class="sub-list">
+            <a href="#">📄 Pamphlets</a>
+            <a href="#">📘 Textbooks</a>
+          </div>
+        </details>
+      </div>
+      <div class="section"><h3>📊 Test Yourself</h3><a class="btn" href="#">Try Quiz</a></div>
+    </div>
+  </main>
+  <footer>
+    <span>Godfrey Mumbi Academy — The way to simplify your education journey</span>
+  </footer>
 </body>
 </html>
