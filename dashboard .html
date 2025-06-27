@@ -2,242 +2,133 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GMA | Student Dashboard</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <title>Godfrey Mumbi Academy</title>
+
+  <!-- Google Font – Inter -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
   <style>
     :root {
-      --bg-page: #ffffff;
-      --card-bg: #f9f9f9;
-      --text-dark: #1f2d3d;
-      --english: #3498db;
-      --science: #1abc9c;
-      --biology: #9b59b6;
-      --chemistry: #e67e22;
-      --math: #f39c12;
-      --footer: #ff7f18;
+      --dark: #1e1e2f;
+      --light: #ffffff;
+      --accent: #3498db;
+      --yt: #ff0000;
+      --wa: #25d366;
+      --mail: #d44638;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: "Segoe UI", sans-serif;
-      background: var(--bg-page);
-      color: var(--text-dark);
-      display: flex;
-      flex-direction: column;
+      font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #e0eafc, #cfdef3);
+      color: var(--dark);
+      text-align: center;
+      padding-bottom: 4rem;
       min-height: 100vh;
-    }
-
-    header {
-      text-align: center;
-      padding: 1.5rem 1rem 1rem;
-    }
-
-    header h1 {
-      font-size: 2rem;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
-
-    main {
-      flex: 1 1 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-      padding: 1rem;
-      max-width: 1400px;
-      width: 100%;
-      margin: 0 auto;
-    }
-
-    .card {
-      background: var(--card-bg);
-      border-radius: 14px;
-      padding: 1rem 1rem 1.5rem;
       display: flex;
       flex-direction: column;
-      gap: 1rem;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-      position: relative;
     }
 
-    .bar {
-      height: 5px;
-      width: 100%;
-      border-radius: 10px 10px 0 0;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
+    header { background: var(--dark); color: var(--light); padding: 2.5rem 1rem; }
+    header h1 { font-size: 2.8rem; letter-spacing: 2px; }
 
-    .card h2 {
-      text-align: center;
-      font-size: 1.3rem;
-    }
+    main { flex: 1 0 auto; }
 
-    .section {
-      background: white;
-      border-radius: 8px;
-      padding: 0.8rem;
-      border: 1px solid #ddd;
-    }
+    section { padding: 2rem 1rem; }
+    h2 { margin-bottom: 1rem; font-size: 1.8rem; text-transform: uppercase; }
 
-    .section h3 {
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
-    }
+    ul.subjects { list-style: none; font-size: 1.2rem; padding-left: 0; display: flex; flex-direction: column; gap: .8rem; align-items: center; }
+    ul.subjects li { font-weight: 600; }
+    .english   { color: #2e86de; }
+    .science   { color: #16a085; }
+    .biology   { color: #9b59b6; }
+    .chemistry { color: #e67e22; }
+    .math      { color: #34495e; }
 
-    details {
-      margin-top: 0.3rem;
-    }
+    #tipDisplay { margin-top: 1rem; font-style: italic; color: var(--dark); }
+    button, .login-btn { padding: .7rem 1.2rem; font-size: 1rem; border: none; border-radius: 5px; cursor: pointer; background: var(--accent); color: var(--light); margin-top: 1rem; transition: background .2s; text-decoration:none; display:inline-block; }
+    button:hover, .login-btn:hover { background: #2980b9; }
 
-    summary {
-      font-weight: 600;
-      cursor: pointer;
-    }
+    .login { margin: 3rem auto 1rem; background: var(--light); padding: 2rem 2.5rem; border-radius: 10px; box-shadow: 0 8px 16px rgba(0,0,0,0.1); max-width: 340px; }
+    .login input { width: 100%; padding: .7rem; margin-top: .6rem; border: 1px solid #ccc; border-radius: 5px; }
 
-    .sub-list {
-      margin-top: 0.5rem;
-      padding-left: 1rem;
-    }
+    .social-icons { margin-top: 2.5rem; display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; }
+    .social-icons a { display: flex; flex-direction: column; align-items: center; text-decoration: none; width: 90px; transition: transform .2s; }
+    .social-icons a:hover { transform: scale(1.15); }
+    .social-icons i { font-size: 2.4rem; }
+    .fa-whatsapp { color: var(--wa); }
+    .fa-youtube  { color: var(--yt); }
+    .fa-envelope { color: var(--mail); }
+    .social-icons span { margin-top: .35rem; font-size: .9rem; font-weight: 600; color: var(--dark); }
 
-    .sub-list a {
-      display: block;
-      margin-bottom: 0.3rem;
-      text-decoration: none;
-      color: var(--text-dark);
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 0.4rem 1rem;
-      border: none;
-      border-radius: 6px;
-      background: var(--accent);
-      color: white;
-      font-weight: 500;
-      cursor: pointer;
-      text-decoration: none;
-    }
-
-    footer {
-      background: var(--footer);
-      color: #fff;
-      text-align: center;
-      padding: 1rem;
-      font-style: italic;
-      font-weight: 600;
-      transform: skewY(-2deg);
-      box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.2);
-    }
-
-    footer span {
-      display: inline-block;
-      transform: skewY(2deg);
-    }
-
-    .english { --accent: var(--english); }
-    .science { --accent: var(--science); }
-    .biology { --accent: var(--biology); }
-    .chemistry { --accent: var(--chemistry); }
-    .math { --accent: var(--math); }
-    .english .bar { background: var(--english); }
-    .science .bar { background: var(--science); }
-    .biology .bar { background: var(--biology); }
-    .chemistry .bar { background: var(--chemistry); }
-    .math .bar { background: var(--math); }
-    .english h2, .science h2, .biology h2, .chemistry h2, .math h2 { color: var(--accent); }
+    footer { padding: 1.5rem 1rem; background: var(--dark); color: var(--light); font-size: .85rem; }
   </style>
 </head>
 <body>
   <header>
-    <h1>Student Dashboard - Godfrey Mumbi Academy</h1>
+    <h1>Welcome to Godfrey Mumbi Academy</h1>
   </header>
+
   <main>
-    <div class="card english">
-      <div class="bar"></div>
-      <h2>English</h2>
-      <div class="section"><h3>🎞 Videos</h3><a class="btn" href="#">Watch</a></div>
-      <div class="section">
-        <details>
-          <summary>📚 Materials</summary>
-          <div class="sub-list">
-            <a href="#">📄 Pamphlets</a>
-            <a href="#">📘 Textbooks</a>
-          </div>
-        </details>
-      </div>
-      <div class="section"><h3>📝 Test Yourself</h3><a class="btn" href="#">Try Quiz</a></div>
-    </div>
-    <div class="card science">
-      <div class="bar"></div>
-      <h2>Science</h2>
-      <div class="section"><h3>🎞 Videos</h3><a class="btn" href="#">Watch</a></div>
-      <div class="section">
-        <details>
-          <summary>📚 Materials</summary>
-          <div class="sub-list">
-            <a href="#">📄 Pamphlets</a>
-            <a href="#">📘 Textbooks</a>
-          </div>
-        </details>
-      </div>
-      <div class="section"><h3>🧪 Test Yourself</h3><a class="btn" href="#">Try Quiz</a></div>
-    </div>
-    <div class="card biology">
-      <div class="bar"></div>
-      <h2>Biology</h2>
-      <div class="section"><h3>🎞 Videos</h3><a class="btn" href="#">Watch</a></div>
-      <div class="section">
-        <details>
-          <summary>📚 Materials</summary>
-          <div class="sub-list">
-            <a href="#">📄 Pamphlets</a>
-            <a href="#">📘 Textbooks</a>
-          </div>
-        </details>
-      </div>
-      <div class="section"><h3>🔬 Test Yourself</h3><a class="btn" href="#">Try Quiz</a></div>
-    </div>
-    <div class="card chemistry">
-      <div class="bar"></div>
-      <h2>Chemistry</h2>
-      <div class="section"><h3>🎞 Videos</h3><a class="btn" href="#">Watch</a></div>
-      <div class="section">
-        <details>
-          <summary>📚 Materials</summary>
-          <div class="sub-list">
-            <a href="#">📄 Pamphlets</a>
-            <a href="#">📘 Textbooks</a>
-          </div>
-        </details>
-      </div>
-      <div class="section"><h3>🧪 Test Yourself</h3><a class="btn" href="#">Try Quiz</a></div>
-    </div>
-    <div class="card math">
-      <div class="bar"></div>
-      <h2>Mathematics</h2>
-      <div class="section"><h3>🎞 Videos</h3><a class="btn" href="#">Watch</a></div>
-      <div class="section">
-        <details>
-          <summary>📚 Materials</summary>
-          <div class="sub-list">
-            <a href="#">📄 Pamphlets</a>
-            <a href="#">📘 Textbooks</a>
-          </div>
-        </details>
-      </div>
-      <div class="section"><h3>📊 Test Yourself</h3><a class="btn" href="#">Try Quiz</a></div>
-    </div>
+    <!-- SUBJECTS -->
+    <section>
+      <h2>📚 SUBJECTS</h2>
+      <ul class="subjects">
+        <li class="english">📘 English</li>
+        <li class="science">🔬 Science</li>
+        <li class="biology">🧬 Biology</li>
+        <li class="chemistry">⚗️ Chemistry</li>
+        <li class="math">➗ Mathematics</li>
+      </ul>
+    </section>
+
+    <!-- TIPS -->
+    <section>
+      <h2>💡 TIPS</h2>
+      <div id="tipDisplay">Tap "Show me a tip" for a quick boost!</div>
+      <button id="tipBtn">Show me a tip</button>
+    </section>
+
+    <!-- LOGIN (link to dashboard) -->
+    <section class="login">
+      <h2>Student / Staff Login</h2>
+      <a href="dashboard.html" class="login-btn"><i class="fas fa-sign-in-alt"></i> Go to Dashboard</a>
+    </section>
+
+    <!-- SOCIAL -->
+    <section class="social-icons">
+      <a href="https://wa.me/260976125340" target="_blank"><i class="fab fa-whatsapp"></i><span>WhatsApp</span></a>
+      <a href="https://www.youtube.com/@GODFREYMUMBIACADEMY" target="_blank"><i class="fab fa-youtube"></i><span>YouTube</span></a>
+      <a href="mailto:gm2860702@gmail.com"><i class="fas fa-envelope"></i><span>Email</span></a>
+    </section>
   </main>
+
   <footer>
-    <span>Godfrey Mumbi Academy — The way to simplify your education journey</span>
+    © <span id="year"></span> Godfrey Mumbi Academy — All rights reserved.
   </footer>
+
+  <script>
+    // Update footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const extraTips = [
+      'Review new material within 24 hours to lock it in.',
+      'Teach a friend — explaining strengthens memory.',
+      'Use spaced repetition flashcards.',
+      'Chunk large topics into bite-sized goals.',
+      'Sleep 7–8 hrs — your brain files info overnight.'
+    ];
+
+    document.getElementById('tipBtn').addEventListener('click', () => {
+      const tipDisplay = document.getElementById('tipDisplay');
+      const tip = extraTips[Math.floor(Math.random() * extraTips.length)];
+      tipDisplay.textContent = tip;
+    });
+  </script>
 </body>
 </html>
 
