@@ -31,25 +31,18 @@
       margin-bottom: 2rem;
       border-radius: 8px;
       padding: 1rem;
-      position: relative;
-    }
-    .subject-section::before {
-      content: "\1F33C"; /* flower emoji */
-      position: absolute;
-      top: -10px;
-      right: -10px;
-      font-size: 1.4rem;
-      opacity: 0.6;
     }
     .math { background-color: #f2f2f2; }
     .english { background-color: #e0f7fa; }
     .science { background-color: #e8f5e9; }
     .biology { background-color: #f3e5f5; }
     .chemistry { background-color: #fff3e0; }
+
     iframe {
       max-width: 100%;
       margin: 0.5rem 0;
     }
+
     footer {
       background-color: orange;
       color: white;
@@ -57,38 +50,35 @@
       padding: 1rem;
       font-style: italic;
     }
-    ul { padding-left: 1.2rem; }
-    a { color: #0066cc; text-decoration: none; }
-    a:hover { text-decoration: underline; }
 
-    /* ---------- NEW DECOR & TOGGLE ---------- */
-    .decor-line {
-      height: 8px;
-      background: linear-gradient(90deg,#ff9a9e,#fad0c4,#f6d365,#fda085);
-      border: none;
-      margin: 0;
+    ul {
+      padding-left: 1.2rem;
     }
-    .resource-bar {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: .5rem;
-      padding: 1rem;
+
+    a {
+      color: #0066cc;
+      text-decoration: none;
     }
-    .resource-bar button {
-      background: #222;
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .toggle-button {
+      background-color: #444;
       color: #fff;
+      padding: 0.5rem 1rem;
+      margin-top: 1rem;
       border: none;
-      border-radius: 6px;
-      padding: 0.6rem 1.2rem;
       cursor: pointer;
+      border-radius: 5px;
       font-size: 1rem;
-      transition: background 0.2s;
     }
-    .resource-bar button:hover, .resource-bar button.active {
-      background: #444;
+
+    .toggle-content {
+      display: none;
+      margin-top: 1rem;
     }
-    .hidden { display: none !important; }
   </style>
 </head>
 <body>
@@ -96,115 +86,147 @@
     <h1>Subject Dashboard</h1>
   </header>
 
-  <!-- Decorative gradient line -->
-  <div class="decor-line"></div>
-
-  <!-- Toggle buttons -->
-  <div class="resource-bar">
-    <button onclick="toggleResources('video')">🎥 Videos</button>
-    <button onclick="toggleResources('pamphlet')">📚 Pamphlets</button>
-    <button onclick="toggleResources('textbook')">📘 Textbooks</button>
-    <button onclick="toggleResources('quiz')">📝 Quizzes</button>
-    <button onclick="toggleResources(null)">❌ Hide All</button>
-  </div>
-
   <main>
+    <!-- Example for Mathematics -->
     <section class="subject-section math">
       <h2>Mathematics</h2>
-      <h3>🎥 Videos</h3>
-      <iframe src="https://www.youtube.com/embed/8arr7OT2P6w" frameborder="0" allowfullscreen></iframe>
-      <iframe src="https://www.youtube.com/embed/MJULvvEgv1I" frameborder="0" allowfullscreen></iframe>
 
-      <h3>📚 Materials</h3>
-      <strong>Pamphlets</strong>
-      <ul>
-        <li><a href="materials/pamphlets/math-pamphlet1.pdf" target="_blank">Math Pamphlet 1</a></li>
-      </ul>
-      <strong>Textbooks</strong>
-      <ul>
-        <li><a href="materials/textbooks/math-textbook1.pdf" target="_blank">Math Textbook 1</a></li>
-      </ul>
+      <button class="toggle-button" onclick="toggleContent(this)">🎥 Videos</button>
+      <div class="toggle-content">
+        <iframe src="https://www.youtube.com/embed/8arr7OT2P6w" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/MJULvvEgv1I" frameborder="0" allowfullscreen></iframe>
+      </div>
 
-      <h3>📝 Test Yourself</h3>
-      <ul>
-        <li><a href="quizzes/math-quiz1.pdf" target="_blank">Math Quiz 1</a></li>
-      </ul>
+      <button class="toggle-button" onclick="toggleContent(this)">📚 Materials</button>
+      <div class="toggle-content">
+        <strong>Pamphlets</strong>
+        <ul>
+          <li><a href="materials/pamphlets/math-pamphlet1.pdf" target="_blank">Math Pamphlet 1</a></li>
+        </ul>
+        <strong>Textbooks</strong>
+        <ul>
+          <li><a href="materials/textbooks/math-textbook1.pdf" target="_blank">Math Textbook 1</a></li>
+        </ul>
+      </div>
+
+      <button class="toggle-button" onclick="toggleContent(this)">📝 Test Yourself</button>
+      <div class="toggle-content">
+        <ul>
+          <li><a href="quizzes/math-quiz1.pdf" target="_blank">Math Quiz 1</a></li>
+        </ul>
+      </div>
     </section>
 
+    <!-- Repeat for English -->
     <section class="subject-section english">
       <h2>English</h2>
-      <h3>🎥 Videos</h3>
-      <!-- Embed or link your English videos -->
-      <h3>📚 Materials</h3>
-      <strong>Pamphlets</strong>
-      <ul>
-        <li><a href="materials/pamphlets/english-pamphlet1.pdf" target="_blank">English Pamphlet 1</a></li>
-      </ul>
-      <strong>Textbooks</strong>
-      <ul>
-        <li><a href="materials/textbooks/english-textbook1.pdf" target="_blank">English Textbook 1</a></li>
-      </ul>
-      <h3>📝 Test Yourself</h3>
-      <ul>
-        <li><a href="quizzes/english-quiz1.pdf" target="_blank">English Quiz 1</a></li>
-      </ul>
+
+      <button class="toggle-button" onclick="toggleContent(this)">🎥 Videos</button>
+      <div class="toggle-content">
+        <!-- Embed or link your English videos here -->
+      </div>
+
+      <button class="toggle-button" onclick="toggleContent(this)">📚 Materials</button>
+      <div class="toggle-content">
+        <strong>Pamphlets</strong>
+        <ul>
+          <li><a href="materials/pamphlets/english-pamphlet1.pdf" target="_blank">English Pamphlet 1</a></li>
+        </ul>
+        <strong>Textbooks</strong>
+        <ul>
+          <li><a href="materials/textbooks/english-textbook1.pdf" target="_blank">English Textbook 1</a></li>
+        </ul>
+      </div>
+
+      <button class="toggle-button" onclick="toggleContent(this)">📝 Test Yourself</button>
+      <div class="toggle-content">
+        <ul>
+          <li><a href="quizzes/english-quiz1.pdf" target="_blank">English Quiz 1</a></li>
+        </ul>
+      </div>
     </section>
 
+    <!-- Repeat for Science -->
     <section class="subject-section science">
       <h2>Science</h2>
-      <h3>🎥 Videos</h3>
-      <!-- Embed or link your Science videos -->
-      <h3>📚 Materials</h3>
-      <strong>Pamphlets</strong>
-      <ul>
-        <li><a href="materials/pamphlets/science-pamphlet1.pdf" target="_blank">Science Pamphlet 1</a></li>
-      </ul>
-      <strong>Textbooks</strong>
-      <ul>
-        <li><a href="materials/textbooks/science-textbook1.pdf" target="_blank">Science Textbook 1</a></li>
-      </ul>
-      <h3>📝 Test Yourself</h3>
-      <ul>
-        <li><a href="quizzes/science-quiz1.pdf" target="_blank">Science Quiz 1</a></li>
-      </ul>
+
+      <button class="toggle-button" onclick="toggleContent(this)">🎥 Videos</button>
+      <div class="toggle-content">
+        <!-- Embed or link your Science videos here -->
+      </div>
+
+      <button class="toggle-button" onclick="toggleContent(this)">📚 Materials</button>
+      <div class="toggle-content">
+        <strong>Pamphlets</strong>
+        <ul>
+          <li><a href="materials/pamphlets/science-pamphlet1.pdf" target="_blank">Science Pamphlet 1</a></li>
+        </ul>
+        <strong>Textbooks</strong>
+        <ul>
+          <li><a href="materials/textbooks/science-textbook1.pdf" target="_blank">Science Textbook 1</a></li>
+        </ul>
+      </div>
+
+      <button class="toggle-button" onclick="toggleContent(this)">📝 Test Yourself</button>
+      <div class="toggle-content">
+        <ul>
+          <li><a href="quizzes/science-quiz1.pdf" target="_blank">Science Quiz 1</a></li>
+        </ul>
+      </div>
     </section>
 
+    <!-- Repeat for Biology -->
     <section class="subject-section biology">
       <h2>Biology</h2>
-      <h3>🎥 Videos</h3>
-      <!-- Embed or link your Biology videos -->
-      <h3>📚 Materials</h3>
-      <strong>Pamphlets</strong>
-      <ul>
-        <li><a href="materials/pamphlets/biology-pamphlet1.pdf" target="_blank">Biology Pamphlet 1</a></li>
-      </ul>
-      <strong>Textbooks</strong>
-      <ul>
-        <li><a href="materials/textbooks/biology-textbook1.pdf" target="_blank">Biology Textbook 1</a></li>
-      </ul>
-      <h3>📝 Test Yourself</h3>
-      <ul>
-        <li><a href="quizzes/biology-quiz1.pdf" target="_blank">Biology Quiz 1</a></li>
-      </ul>
+
+      <button class="toggle-button" onclick="toggleContent(this)">🎥 Videos</button>
+      <div class="toggle-content"></div>
+
+      <button class="toggle-button" onclick="toggleContent(this)">📚 Materials</button>
+      <div class="toggle-content">
+        <strong>Pamphlets</strong>
+        <ul>
+          <li><a href="materials/pamphlets/biology-pamphlet1.pdf" target="_blank">Biology Pamphlet 1</a></li>
+        </ul>
+        <strong>Textbooks</strong>
+        <ul>
+          <li><a href="materials/textbooks/biology-textbook1.pdf" target="_blank">Biology Textbook 1</a></li>
+        </ul>
+      </div>
+
+      <button class="toggle-button" onclick="toggleContent(this)">📝 Test Yourself</button>
+      <div class="toggle-content">
+        <ul>
+          <li><a href="quizzes/biology-quiz1.pdf" target="_blank">Biology Quiz 1</a></li>
+        </ul>
+      </div>
     </section>
 
+    <!-- Repeat for Chemistry -->
     <section class="subject-section chemistry">
       <h2>Chemistry</h2>
-      <h3>🎥 Videos</h3>
-      <!-- Embed or link your Chemistry videos -->
-      <h3>📚 Materials</h3>
-      <strong>Pamphlets</strong>
-      <ul>
-        <li><a href="materials/pamphlets/chemistry-pamphlet1.pdf" target="_blank">Chemistry Pamphlet 1</a></li>
-      </ul>
-      <strong>Textbooks</strong>
-      <ul>
-        <li><a href="materials/textbooks/chemistry-textbook1.pdf" target="_blank">Chemistry Textbook 1</a></li>
-      </ul>
-      <h3>📝 Test Yourself</h3>
-      <ul>
-        <li><a href="quizzes/chemistry-quiz1.pdf" target="_blank">Chemistry Quiz 1</a></li>
-      </ul>
+
+      <button class="toggle-button" onclick="toggleContent(this)">🎥 Videos</button>
+      <div class="toggle-content"></div>
+
+      <button class="toggle-button" onclick="toggleContent(this)">📚 Materials</button>
+      <div class="toggle-content">
+        <strong>Pamphlets</strong>
+        <ul>
+          <li><a href="materials/pamphlets/chemistry-pamphlet1.pdf" target="_blank">Chemistry Pamphlet 1</a></li>
+        </ul>
+        <strong>Textbooks</strong>
+        <ul>
+          <li><a href="materials/textbooks/chemistry-textbook1.pdf" target="_blank">Chemistry Textbook 1</a></li>
+        </ul>
+      </div>
+
+      <button class="toggle-button" onclick="toggleContent(this)">📝 Test Yourself</button>
+      <div class="toggle-content">
+        <ul>
+          <li><a href="quizzes/chemistry-quiz1.pdf" target="_blank">Chemistry Quiz 1</a></li>
+        </ul>
+      </div>
     </section>
   </main>
 
@@ -212,10 +234,11 @@
     Godfrey Mumbi Academy — The way to simplify your education journey, the way to go.
   </footer>
 
-  <!-- Dynamic loader script: adds new resources automatically without altering your design -->
   <script>
-    (function() {
-      const subjects = ['math', 'english', 'science', 'biology', 'chemistry'];
-      const sources = [
-        { file
-
+    function toggleContent(button) {
+      const content = button.nextElementSibling;
+      content.style.display = content.style.display === "block" ? "none" : "block";
+    }
+  </script>
+</body>
+</html>
