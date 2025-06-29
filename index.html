@@ -22,11 +22,7 @@
       --mail: #d44638;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Inter', sans-serif;
       background-color: var(--dark-bg);
@@ -40,87 +36,46 @@
       text-align: center;
     }
 
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1.5rem;
-    }
-    h2 {
-      font-size: 1.4rem;
-      margin-bottom: 1rem;
-      color: var(--orange);
-    }
+    h1 { font-size: 2.5rem; margin-bottom: 1.4rem; }
+    h2 { font-size: 1.4rem; margin-bottom: 1rem; color: var(--orange); }
 
-    .section-title {
-      color: var(--primary);
-      font-size: 1.2rem;
-      margin-top: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
+    .section-title { color: var(--primary); font-size: 1.2rem; margin-top: 1.4rem; margin-bottom: 0.4rem; }
 
-    ul {
-      list-style: none;
-      padding: 0;
-      margin-bottom: 1rem;
-    }
-
-    li {
-      margin: 0.3rem 0;
-      font-weight: 600;
-    }
-
-    .subjects li:nth-child(1) { color: var(--subject-blue); }
-    .subjects li:nth-child(2) { color: var(--subject-green); }
-    .subjects li:nth-child(3) { color: var(--subject-purple); }
-    .subjects li:nth-child(4) { color: var(--subject-red); }
-    .subjects li:nth-child(5) { color: var(--subject-gray); }
+    ul { list-style: none; padding: 0; margin-bottom: 1rem; }
+    li { margin: 0.28rem 0; font-weight: 600; color: var(--light-text); }
 
     .login-btn {
-      margin-top: 1.5rem;
-      padding: 0.8rem 1.5rem;
+      margin-top: 1.3rem;
+      padding: 0.8rem 2rem;
       font-size: 1rem;
       border: none;
       border-radius: 6px;
-      background-color: var(--primary);
+      background: var(--primary);
       color: white;
       text-decoration: none;
-      display: inline-block;
-    }
-
-    .social-icons {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .social-icons a {
-      color: white;
-      text-decoration: none;
-      display: flex;
-      flex-direction: column;
+      display: inline-flex;
       align-items: center;
-      transition: transform 0.2s;
+      gap: 0.6rem;
+      cursor: pointer;
+      transition: background 0.25s;
     }
+    .login-btn i { color: var(--orange); }
+    .login-btn:hover { background: #2471a3; }
 
-    .social-icons a:hover {
-      transform: scale(1.1);
-    }
-
+    .social-icons { display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; }
+    .social-icons a { color: white; text-decoration: none; display: flex; flex-direction: column; align-items: center; transition: transform 0.2s; }
+    .social-icons a:hover { transform: scale(1.1); }
     .fa-whatsapp { color: var(--wa); }
     .fa-youtube { color: var(--yt); }
     .fa-envelope { color: var(--mail); }
 
-    footer {
-      margin-top: 2rem;
-      font-size: 0.85rem;
-      color: var(--light-text);
-    }
+    footer { margin-top: 2rem; font-size: 0.85rem; color: var(--light-text); }
   </style>
 </head>
 <body>
   <h1>Welcome to Godfrey Mumbi Academy</h1>
-
   <h2>We offer the following:</h2>
+
   <div class="section-title">📚 SUBJECTS</div>
   <ul class="subjects">
     <li>📘 English</li>
@@ -137,28 +92,31 @@
     <li>🏆 How to obtain good results at Secondary School level</li>
   </ul>
 
-  <a href="dashboard.html" class="login-btn">
-    <i class="fas fa-sign-in-alt"></i> Go to Dashboard
-  </a>
+  <button class="login-btn" id="loginBtn"><i class="fas fa-key"></i> LOGIN</button>
 
   <div class="social-icons">
-    <a href="https://wa.me/260976125340" target="_blank">
-      <i class="fab fa-whatsapp fa-2x"></i><span>WhatsApp</span>
-    </a>
-    <a href="https://www.youtube.com/@GODFREYMUMBIACADEMY" target="_blank">
-      <i class="fab fa-youtube fa-2x"></i><span>YouTube</span>
-    </a>
-    <a href="mailto:gm2860702@gmail.com">
-      <i class="fas fa-envelope fa-2x"></i><span>Email</span>
-    </a>
+    <a href="https://wa.me/260976125340" target="_blank"><i class="fab fa-whatsapp fa-2x"></i><span>WhatsApp</span></a>
+    <a href="https://www.youtube.com/@GODFREYMUMBIACADEMY" target="_blank"><i class="fab fa-youtube fa-2x"></i><span>YouTube</span></a>
+    <a href="mailto:gm2860702@gmail.com"><i class="fas fa-envelope fa-2x"></i><span>Email</span></a>
   </div>
 
-  <footer>
-    &copy; <span id="year"></span> Godfrey Mumbi Academy. All rights reserved.
-  </footer>
+  <footer>&copy; <span id="year"></span> Godfrey Mumbi Academy. All rights reserved.</footer>
 
   <script>
+    // footer year
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // simple password gate
+    const PASSWORD = 'GMA2025'; // change this in GitHub to update password
+
+    document.getElementById('loginBtn').addEventListener('click', () => {
+      const pass = prompt('Enter password to access the dashboard:');
+      if (pass === PASSWORD) {
+        window.location.href = 'dashboard.html';
+      } else if (pass !== null) {
+        alert('Incorrect password.');
+      }
+    });
   </script>
 </body>
 </html>
