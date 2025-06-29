@@ -34,7 +34,7 @@
     }
     .math { background-color: #f2f2f2; }
     .english { background-color: #e0f7fa; }
-    .physics { background-color: #e8f5e9; }
+    .science { background-color: #e8f5e9; }
     .biology { background-color: #f3e5f5; }
     .chemistry { background-color: #fff3e0; }
 
@@ -87,12 +87,14 @@
   </header>
 
   <main>
+    <!-- Mathematics -->
     <section class="subject-section math">
       <h2>Mathematics</h2>
       <button class="toggle-button" onclick="toggleContent(this)">🎥 Videos</button>
       <div class="toggle-content">
         <iframe src="https://www.youtube.com/embed/8arr7OT2P6w" frameborder="0" allowfullscreen></iframe>
         <iframe src="https://www.youtube.com/embed/MJULvvEgv1I" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/Ex23sb9NwEY" frameborder="0" allowfullscreen></iframe>
       </div>
       <button class="toggle-button" onclick="toggleContent(this)">📚 Materials</button>
       <div class="toggle-content">
@@ -113,10 +115,13 @@
       </div>
     </section>
 
+    <!-- English -->
     <section class="subject-section english">
       <h2>English</h2>
       <button class="toggle-button" onclick="toggleContent(this)">🎥 Videos</button>
-      <div class="toggle-content"></div>
+      <div class="toggle-content">
+        <iframe src="https://www.youtube.com/embed/Vw5OZQLj5OY" frameborder="0" allowfullscreen></iframe>
+      </div>
       <button class="toggle-button" onclick="toggleContent(this)">📚 Materials</button>
       <div class="toggle-content">
         <strong>Pamphlets</strong>
@@ -136,33 +141,40 @@
       </div>
     </section>
 
-    <section class="subject-section physics">
-      <h2>Physics</h2>
+    <!-- Science -->
+    <section class="subject-section science">
+      <h2>Science (Physics)</h2>
       <button class="toggle-button" onclick="toggleContent(this)">🎥 Videos</button>
-      <div class="toggle-content"></div>
+      <div class="toggle-content">
+        <iframe src="https://www.youtube.com/embed/mPTgM2lbFQU" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/65z-ekSTam8" frameborder="0" allowfullscreen></iframe>
+      </div>
       <button class="toggle-button" onclick="toggleContent(this)">📚 Materials</button>
       <div class="toggle-content">
         <strong>Pamphlets</strong>
         <ul>
-          <li><a href="materials/pamphlets/physics-pamphlet1.pdf" target="_blank">Physics Pamphlet 1</a></li>
+          <li><a href="materials/pamphlets/science-pamphlet1.pdf" target="_blank">Science Pamphlet 1</a></li>
         </ul>
         <strong>Textbooks</strong>
         <ul>
-          <li><a href="materials/textbooks/physics-textbook1.pdf" target="_blank">Physics Textbook 1</a></li>
+          <li><a href="materials/textbooks/science-textbook1.pdf" target="_blank">Science Textbook 1</a></li>
         </ul>
       </div>
       <button class="toggle-button" onclick="toggleContent(this)">📝 Test Yourself</button>
       <div class="toggle-content">
         <ul>
-          <li><a href="quizzes/physics-quiz1.pdf" target="_blank">Physics Quiz 1</a></li>
+          <li><a href="quizzes/science-quiz1.pdf" target="_blank">Science Quiz 1</a></li>
         </ul>
       </div>
     </section>
 
+    <!-- Biology -->
     <section class="subject-section biology">
       <h2>Biology</h2>
       <button class="toggle-button" onclick="toggleContent(this)">🎥 Videos</button>
-      <div class="toggle-content"></div>
+      <div class="toggle-content">
+        <iframe src="https://www.youtube.com/embed/Wy3oxPLdEx8" frameborder="0" allowfullscreen></iframe>
+      </div>
       <button class="toggle-button" onclick="toggleContent(this)">📚 Materials</button>
       <div class="toggle-content">
         <strong>Pamphlets</strong>
@@ -182,10 +194,13 @@
       </div>
     </section>
 
+    <!-- Chemistry -->
     <section class="subject-section chemistry">
       <h2>Chemistry</h2>
       <button class="toggle-button" onclick="toggleContent(this)">🎥 Videos</button>
-      <div class="toggle-content"></div>
+      <div class="toggle-content">
+        <iframe src="https://www.youtube.com/embed/K0lqOwbxFfs" frameborder="0" allowfullscreen></iframe>
+      </div>
       <button class="toggle-button" onclick="toggleContent(this)">📚 Materials</button>
       <div class="toggle-content">
         <strong>Pamphlets</strong>
