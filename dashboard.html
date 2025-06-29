@@ -1,165 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Godfrey Mumbi Academy Dashboard</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <title>Godfrey Mumbi's Academy Dashboard</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #ffffff;
-      color: #333;
-    }
-    header {
-      background-color: #222;
-      color: #fff;
-      padding: 1rem;
-      text-align: center;
-    }
-    section {
-      padding: 1.5rem;
-      border-bottom: 1px solid #ddd;
-    }
-    h2 {
-      margin-top: 0;
-    }
-    .subject-section {
-      margin-bottom: 2rem;
-      border-radius: 8px;
-      padding: 1rem;
-    }
-    .math { background-color: #f2f2f2; }
-    .english { background-color: #e0f7fa; }
-    .science { background-color: #e8f5e9; }
-    .biology { background-color: #f3e5f5; }
-    .chemistry { background-color: #fff3e0; }
-    iframe {
-      max-width: 100%;
-      margin: 0.5rem 0;
-    }
-    footer {
-      background-color: orange;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      font-style: italic;
-    }
-    ul { padding-left: 1.2rem; }
-    a { color: #0066cc; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    body { font-family: Arial; margin: 20px; }
+    h2 { border-bottom: 2px solid #ccc; margin-top: 40px; }
+    .resource { margin: 10px 0; }
+    iframe, a { display: block; margin-top: 5px; }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Subject Dashboard</h1>
-  </header>
 
-  <main>
-    <section class="subject-section math">
-      <h2>Mathematics</h2>
-      <h3>🎥 Videos</h3>
-      <iframe src="https://www.youtube.com/embed/8arr7OT2P6w" frameborder="0" allowfullscreen></iframe>
-      <iframe src="https://www.youtube.com/embed/MJULvvEgv1I" frameborder="0" allowfullscreen></iframe>
+  <h1>📚 Godfrey Mumbi's Academy Dashboard</h1>
 
-      <h3>📚 Materials</h3>
-      <strong>Pamphlets</strong>
-      <ul>
-        <li><a href="materials/pamphlets/math-pamphlet1.pdf" target="_blank">Math Pamphlet 1</a></li>
-      </ul>
-      <strong>Textbooks</strong>
-      <ul>
-        <li><a href="materials/textbooks/math-textbook1.pdf" target="_blank">Math Textbook 1</a></li>
-      </ul>
+  <div id="content"></div>
 
-      <h3>📝 Test Yourself</h3>
-      <ul>
-        <li><a href="quizzes/math-quiz1.pdf" target="_blank">Math Quiz 1</a></li>
-      </ul>
-    </section>
+  <script>
+    const sources = [
+      { file: 'videos.html', type: 'video' },
+      { file: 'pamphlets.html', type: 'pamphlet' },
+      { file: 'text books.html', type: 'textbook' },
+      { file: 'quizzes.html', type: 'quiz' }
+    ];
 
-    <section class="subject-section english">
-      <h2>English</h2>
-      <h3>🎥 Videos</h3>
-      <!-- Embed or link your English videos -->
-      <h3>📚 Materials</h3>
-      <strong>Pamphlets</strong>
-      <ul>
-        <li><a href="materials/pamphlets/english-pamphlet1.pdf" target="_blank">English Pamphlet 1</a></li>
-      </ul>
-      <strong>Textbooks</strong>
-      <ul>
-        <li><a href="materials/textbooks/english-textbook1.pdf" target="_blank">English Textbook 1</a></li>
-      </ul>
-      <h3>📝 Test Yourself</h3>
-      <ul>
-        <li><a href="quizzes/english-quiz1.pdf" target="_blank">English Quiz 1</a></li>
-      </ul>
-    </section>
+    const subjects = ['math', 'biology']; // You can expand this list
+    const contentDiv = document.getElementById('content');
 
-    <section class="subject-section science">
-      <h2>Science</h2>
-      <h3>🎥 Videos</h3>
-      <!-- Embed or link your Science videos -->
-      <h3>📚 Materials</h3>
-      <strong>Pamphlets</strong>
-      <ul>
-        <li><a href="materials/pamphlets/science-pamphlet1.pdf" target="_blank">Science Pamphlet 1</a></li>
-      </ul>
-      <strong>Textbooks</strong>
-      <ul>
-        <li><a href="materials/textbooks/science-textbook1.pdf" target="_blank">Science Textbook 1</a></li>
-      </ul>
-      <h3>📝 Test Yourself</h3>
-      <ul>
-        <li><a href="quizzes/science-quiz1.pdf" target="_blank">Science Quiz 1</a></li>
-      </ul>
-    </section>
+    sources.forEach(src => {
+      fetch(src.file)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, 'text/html');
+          subjects.forEach(subject => {
+            const items = doc.querySelectorAll(`[data-subject="${subject}"]`);
+            if (items.length > 0) {
+              const section = document.createElement('div');
+              section.innerHTML = `<h2>${subject.toUpperCase()} - ${src.type.toUpperCase()}S</h2>`;
+              items.forEach(item => {
+                const title = item.getAttribute('data-title');
+                const url = item.textContent.trim();
+                const container = document.createElement('div');
+                container.className = 'resource';
 
-    <section class="subject-section biology">
-      <h2>Biology</h2>
-      <h3>🎥 Videos</h3>
-      <!-- Embed or link your Biology videos -->
-      <h3>📚 Materials</h3>
-      <strong>Pamphlets</strong>
-      <ul>
-        <li><a href="materials/pamphlets/biology-pamphlet1.pdf" target="_blank">Biology Pamphlet 1</a></li>
-      </ul>
-      <strong>Textbooks</strong>
-      <ul>
-        <li><a href="materials/textbooks/biology-textbook1.pdf" target="_blank">Biology Textbook 1</a></li>
-      </ul>
-      <h3>📝 Test Yourself</h3>
-      <ul>
-        <li><a href="quizzes/biology-quiz1.pdf" target="_blank">Biology Quiz 1</a></li>
-      </ul>
-    </section>
+                if (src.type === 'video') {
+                  const videoId = url.split("youtu.be/")[1] || "";
+                  container.innerHTML = `<strong>${title}</strong><iframe width="300" height="200" src="https://www.youtube.com/embed/${videoId}" allowfullscreen></iframe>`;
+                } else {
+                  container.innerHTML = `<strong>${title}</strong><a href="${url}" target="_blank">${url}</a>`;
+                }
 
-    <section class="subject-section chemistry">
-      <h2>Chemistry</h2>
-      <h3>🎥 Videos</h3>
-      <!-- Embed or link your Chemistry videos -->
-      <h3>📚 Materials</h3>
-      <strong>Pamphlets</strong>
-      <ul>
-        <li><a href="materials/pamphlets/chemistry-pamphlet1.pdf" target="_blank">Chemistry Pamphlet 1</a></li>
-      </ul>
-      <strong>Textbooks</strong>
-      <ul>
-        <li><a href="materials/textbooks/chemistry-textbook1.pdf" target="_blank">Chemistry Textbook 1</a></li>
-      </ul>
-      <h3>📝 Test Yourself</h3>
-      <ul>
-        <li><a href="quizzes/chemistry-quiz1.pdf" target="_blank">Chemistry Quiz 1</a></li>
-      </ul>
-    </section>
-  </main>
-
-  <footer>
-    Godfrey Mumbi Academy — The way to simplify your education journey, the way to go.
-  </footer>
+                section.appendChild(container);
+              });
+              contentDiv.appendChild(section);
+            }
+          });
+        });
+    });
+  </script>
 </body>
 </html>
