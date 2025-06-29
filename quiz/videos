@@ -1,0 +1,14 @@
+ul id="video-list">
+  <li data-subject="physics" data-title="Lesson 1 - Physics Explained Simply">
+    https://youtu.be/65z-ekSTam8?si=MmSmSj0_5k1YZny_
+  </li>
+  <li data-subject="physics" data-title="Lesson 2 - More Physics Insights">
+    https://youtu.be/65z-ekSTam8?si=MmSmSj0_5k1YZny_
+  </li>
+  <li data-subject="math" data-title="Lesson 1 - Linear Equations">
+    https://youtu.be/Ex23sb9NwEY?si=0jfZO3aY09wsYCL6
+  </li>
+  <li data-subject="math" data-title="Lesson 2 - Understanding Math Step by Step">
+    https://youtu.be/8arr7OT2P6w?si=jY_aNvnkCxQkRlco
+  </li>
+</ul
