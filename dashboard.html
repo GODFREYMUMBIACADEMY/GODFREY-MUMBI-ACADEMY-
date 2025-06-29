@@ -51,110 +51,65 @@
     ul { padding-left: 1.2rem; }
     a { color: #0066cc; text-decoration: none; }
     a:hover { text-decoration: underline; }
+    .resource-toggle {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    .resource-toggle button {
+      padding: 0.6rem 1.2rem;
+      background-color: #222;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .resource-toggle button:hover {
+      background-color: #444;
+    }
+    .resource-group {
+      display: none;
+    }
+    .resource-group.active {
+      display: block;
+    }
+    .dashboard-image {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-bottom: 4px solid orange;
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Subject Dashboard</h1>
   </header>
+  <img src="images/academy-cover.jpg" alt="Welcome" class="dashboard-image" />
 
   <main>
-    <section class="subject-section math">
-      <h2>Mathematics</h2>
-      <h3>🎥 Videos</h3>
-      <iframe src="https://www.youtube.com/embed/8arr7OT2P6w" frameborder="0" allowfullscreen></iframe>
-      <iframe src="https://www.youtube.com/embed/MJULvvEgv1I" frameborder="0" allowfullscreen></iframe>
-
-      <h3>📚 Materials</h3>
-      <strong>Pamphlets</strong>
-      <ul>
-        <li><a href="materials/pamphlets/math-pamphlet1.pdf" target="_blank">Math Pamphlet 1</a></li>
-      </ul>
-      <strong>Textbooks</strong>
-      <ul>
-        <li><a href="materials/textbooks/math-textbook1.pdf" target="_blank">Math Textbook 1</a></li>
-      </ul>
-
-      <h3>📝 Test Yourself</h3>
-      <ul>
-        <li><a href="quizzes/math-quiz1.pdf" target="_blank">Math Quiz 1</a></li>
-      </ul>
+    <section class="resource-toggle">
+      <button onclick="showGroup('videos')">🎥 Videos</button>
+      <button onclick="showGroup('pamphlets')">📚 Pamphlets</button>
+      <button onclick="showGroup('textbooks')">📘 Textbooks</button>
+      <button onclick="showGroup('quizzes')">📝 Quizzes</button>
     </section>
 
-    <section class="subject-section english">
-      <h2>English</h2>
-      <h3>🎥 Videos</h3>
-      <!-- Embed or link your English videos -->
-      <h3>📚 Materials</h3>
-      <strong>Pamphlets</strong>
-      <ul>
-        <li><a href="materials/pamphlets/english-pamphlet1.pdf" target="_blank">English Pamphlet 1</a></li>
-      </ul>
-      <strong>Textbooks</strong>
-      <ul>
-        <li><a href="materials/textbooks/english-textbook1.pdf" target="_blank">English Textbook 1</a></li>
-      </ul>
-      <h3>📝 Test Yourself</h3>
-      <ul>
-        <li><a href="quizzes/english-quiz1.pdf" target="_blank">English Quiz 1</a></li>
-      </ul>
+    <section id="videos" class="resource-group">
+      <!-- Video sections by subject -->
     </section>
 
-    <section class="subject-section science">
-      <h2>Science</h2>
-      <h3>🎥 Videos</h3>
-      <!-- Embed or link your Science videos -->
-      <h3>📚 Materials</h3>
-      <strong>Pamphlets</strong>
-      <ul>
-        <li><a href="materials/pamphlets/science-pamphlet1.pdf" target="_blank">Science Pamphlet 1</a></li>
-      </ul>
-      <strong>Textbooks</strong>
-      <ul>
-        <li><a href="materials/textbooks/science-textbook1.pdf" target="_blank">Science Textbook 1</a></li>
-      </ul>
-      <h3>📝 Test Yourself</h3>
-      <ul>
-        <li><a href="quizzes/science-quiz1.pdf" target="_blank">Science Quiz 1</a></li>
-      </ul>
+    <section id="pamphlets" class="resource-group">
+      <!-- Pamphlet sections by subject -->
     </section>
 
-    <section class="subject-section biology">
-      <h2>Biology</h2>
-      <h3>🎥 Videos</h3>
-      <!-- Embed or link your Biology videos -->
-      <h3>📚 Materials</h3>
-      <strong>Pamphlets</strong>
-      <ul>
-        <li><a href="materials/pamphlets/biology-pamphlet1.pdf" target="_blank">Biology Pamphlet 1</a></li>
-      </ul>
-      <strong>Textbooks</strong>
-      <ul>
-        <li><a href="materials/textbooks/biology-textbook1.pdf" target="_blank">Biology Textbook 1</a></li>
-      </ul>
-      <h3>📝 Test Yourself</h3>
-      <ul>
-        <li><a href="quizzes/biology-quiz1.pdf" target="_blank">Biology Quiz 1</a></li>
-      </ul>
+    <section id="textbooks" class="resource-group">
+      <!-- Textbook sections by subject -->
     </section>
 
-    <section class="subject-section chemistry">
-      <h2>Chemistry</h2>
-      <h3>🎥 Videos</h3>
-      <!-- Embed or link your Chemistry videos -->
-      <h3>📚 Materials</h3>
-      <strong>Pamphlets</strong>
-      <ul>
-        <li><a href="materials/pamphlets/chemistry-pamphlet1.pdf" target="_blank">Chemistry Pamphlet 1</a></li>
-      </ul>
-      <strong>Textbooks</strong>
-      <ul>
-        <li><a href="materials/textbooks/chemistry-textbook1.pdf" target="_blank">Chemistry Textbook 1</a></li>
-      </ul>
-      <h3>📝 Test Yourself</h3>
-      <ul>
-        <li><a href="quizzes/chemistry-quiz1.pdf" target="_blank">Chemistry Quiz 1</a></li>
-      </ul>
+    <section id="quizzes" class="resource-group">
+      <!-- Quiz sections by subject -->
     </section>
   </main>
 
@@ -162,8 +117,20 @@
     Godfrey Mumbi Academy — The way to simplify your education journey, the way to go.
   </footer>
 
-  <!-- Dynamic loader script: adds new resources automatically without altering your design -->
   <script>
+    function showGroup(id) {
+      document.querySelectorAll('.resource-group').forEach(group => {
+        group.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+    }
+
+    // Restore state on page reload
+    window.addEventListener('beforeunload', () => {
+      document.querySelectorAll('.resource-group').forEach(group => group.classList.remove('active'));
+    });
+
+    // Dynamic loader script
     (function() {
       const subjects = ['math', 'english', 'science', 'biology', 'chemistry'];
       const sources = [
@@ -178,86 +145,60 @@
         return match ? match[1] : '';
       }
 
-      function getTargetUl(section, label) {
-        // label should be lowercase keyword like 'pamphlet', 'textbook', 'quiz'
-        const strongs = section.querySelectorAll('strong');
-        for (const s of strongs) {
-          if (s.textContent.toLowerCase().includes(label)) {
-            const nxt = s.nextElementSibling;
-            if (nxt && nxt.tagName === 'UL') return nxt;
-          }
+      function getOrCreateSubjectDiv(group, subject) {
+        let div = group.querySelector(`.subject-section.${subject}`);
+        if (!div) {
+          div = document.createElement('div');
+          div.className = `subject-section ${subject}`;
+          div.innerHTML = `<h2>${subject.charAt(0).toUpperCase() + subject.slice(1)}</h2>`;
+          group.appendChild(div);
         }
-        // fallback: last UL in section
-        return section.querySelector('ul:last-of-type');
+        return div;
       }
 
-      subjects.forEach(subject => {
-        const section = document.querySelector(`section.${subject}`);
-        if (!section) return;
+      sources.forEach(src => {
+        fetch(src.file)
+          .then(r => r.ok ? r.text() : '')
+          .then(html => {
+            if (!html) return;
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
 
-        sources.forEach(src => {
-          fetch(src.file)
-            .then(r => r.ok ? r.text() : '')
-            .then(html => {
-              if (!html) return;
-              const parser = new DOMParser();
-              const doc = parser.parseFromString(html, 'text/html');
+            subjects.forEach(subject => {
+              const group = document.getElementById(src.type + 's');
+              if (!group) return;
               const items = doc.querySelectorAll(`[data-subject="${subject}"]`);
               if (!items.length) return;
+
+              const section = getOrCreateSubjectDiv(group, subject);
 
               items.forEach(item => {
                 const title = item.getAttribute('data-title') || 'Untitled';
                 const url = item.textContent.trim();
 
-                switch (src.type) {
-                  case 'video': {
-                    const vidId = getYouTubeID(url);
-                    if (!vidId) return;
-                    const iframe = document.createElement('iframe');
-                    iframe.src = `https://www.youtube.com/embed/${vidId}`;
-                    iframe.width = '300';
-                    iframe.height = '200';
-                    iframe.setAttribute('frameborder', '0');
-                    iframe.setAttribute('allowfullscreen', 'true');
-                    // Insert after the Videos h3 (first one in section)
-                    const videoHeader = Array.from(section.querySelectorAll('h3')).find(h => h.textContent.includes('🎥'));
-                    if (videoHeader) videoHeader.insertAdjacentElement('afterend', iframe);
-                    break;
-                  }
-                  case 'pamphlet': {
-                    const ul = getTargetUl(section, 'pamphlet');
-                    if (ul) {
-                      const li = document.createElement('li');
-                      li.innerHTML = `<a href="${url}" target="_blank">${title}</a>`;
-                      ul.appendChild(li);
-                    }
-                    break;
-                  }
-                  case 'textbook': {
-                    const ul = getTargetUl(section, 'textbook');
-                    if (ul) {
-                      const li = document.createElement('li');
-                      li.innerHTML = `<a href="${url}" target="_blank">${title}</a>`;
-                      ul.appendChild(li);
-                    }
-                    break;
-                  }
-                  case 'quiz': {
-                    const ul = getTargetUl(section, 'quiz');
-                    if (ul) {
-                      const li = document.createElement('li');
-                      li.innerHTML = `<a href="${url}" target="_blank">${title}</a>`;
-                      ul.appendChild(li);
-                    }
-                    break;
-                  }
+                if (src.type === 'video') {
+                  const vidId = getYouTubeID(url);
+                  if (!vidId) return;
+                  const iframe = document.createElement('iframe');
+                  iframe.src = `https://www.youtube.com/embed/${vidId}`;
+                  iframe.width = '300';
+                  iframe.height = '200';
+                  iframe.setAttribute('frameborder', '0');
+                  iframe.setAttribute('allowfullscreen', 'true');
+                  section.appendChild(iframe);
+                } else {
+                  const ul = section.querySelector('ul') || document.createElement('ul');
+                  const li = document.createElement('li');
+                  li.innerHTML = `<a href="${url}" target="_blank">${title}</a>`;
+                  ul.appendChild(li);
+                  section.appendChild(ul);
                 }
               });
-            })
-            .catch(() => {/* ignore errors for missing files */});
-        });
+            });
+          });
       });
     })();
   </script>
 </body>
 </html>
+
