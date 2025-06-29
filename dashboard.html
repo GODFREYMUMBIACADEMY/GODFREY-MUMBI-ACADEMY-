@@ -1,30 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Godfrey Mumbi's Academy Dashboard</title>
   <style>
-    body { font-family: Arial; margin: 20px; }
-    h2 { border-bottom: 2px solid #ccc; margin-top: 40px; }
-    .resource { margin: 10px 0; }
-    iframe, a { display: block; margin-top: 5px; }
+    body { font-family: Arial, sans-serif; margin: 20px; background: #f5f5f5; color: #333; }
+    h1, h2 { color: #2c3e50; }
+    .section { margin-bottom: 40px; }
+    .resource { margin: 15px 0; padding: 10px; background: #fff; border-left: 4px solid #2980b9; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    iframe { margin-top: 10px; border: none; }
+    a { color: #2980b9; text-decoration: none; }
+    a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
 
   <h1>📚 Godfrey Mumbi's Academy Dashboard</h1>
 
-  <div id="content"></div>
+  <div class="section">
+    <h2>Mathematics Videos</h2>
+    <div id="math-videos"></div>
+  </div>
+
+  <div class="section">
+    <h2>Mathematics Pamphlets</h2>
+    <div id="math-pamphlets"></div>
+  </div>
+
+  <div class="section">
+    <h2>Mathematics Text Books</h2>
+    <div id="math-textbooks"></div>
+  </div>
+
+  <div class="section">
+    <h2>Mathematics Quizzes</h2>
+    <div id="math-quizzes"></div>
+  </div>
 
   <script>
     const sources = [
-      { file: 'videos.html', type: 'video' },
-      { file: 'pamphlets.html', type: 'pamphlet' },
-      { file: 'text books.html', type: 'textbook' },
-      { file: 'quizzes.html', type: 'quiz' }
+      { file: 'videos.html', type: 'video', containerId: 'math-videos' },
+      { file: 'pamphlets.html', type: 'pamphlet', containerId: 'math-pamphlets' },
+      { file: 'text books.html', type: 'textbook', containerId: 'math-textbooks' },
+      { file: 'quizzes.html', type: 'quiz', containerId: 'math-quizzes' }
     ];
-
-    const subjects = ['math', 'biology']; // You can expand this list
-    const contentDiv = document.getElementById('content');
 
     sources.forEach(src => {
       fetch(src.file)
@@ -32,31 +52,26 @@
         .then(html => {
           const parser = new DOMParser();
           const doc = parser.parseFromString(html, 'text/html');
-          subjects.forEach(subject => {
-            const items = doc.querySelectorAll(`[data-subject="${subject}"]`);
-            if (items.length > 0) {
-              const section = document.createElement('div');
-              section.innerHTML = `<h2>${subject.toUpperCase()} - ${src.type.toUpperCase()}S</h2>`;
-              items.forEach(item => {
-                const title = item.getAttribute('data-title');
-                const url = item.textContent.trim();
-                const container = document.createElement('div');
-                container.className = 'resource';
-
-                if (src.type === 'video') {
-                  const videoId = url.split("youtu.be/")[1] || "";
-                  container.innerHTML = `<strong>${title}</strong><iframe width="300" height="200" src="https://www.youtube.com/embed/${videoId}" allowfullscreen></iframe>`;
-                } else {
-                  container.innerHTML = `<strong>${title}</strong><a href="${url}" target="_blank">${url}</a>`;
-                }
-
-                section.appendChild(container);
-              });
-              contentDiv.appendChild(section);
-            }
-          });
+          const items = doc.querySelectorAll('[data-subject="math"]');
+          const container = document.getElementById(src.containerId);
+          if (container) {
+            items.forEach(item => {
+              const title = item.getAttribute('data-title');
+              const url = item.textContent.trim();
+              const div = document.createElement('div');
+              div.className = 'resource';
+              if (src.type === 'video') {
+                const videoId = url.split("youtu.be/")[1];
+                div.innerHTML = `<strong>${title}</strong><br><iframe width="300" height="200" src="https://www.youtube.com/embed/${videoId}" allowfullscreen></iframe>`;
+              } else {
+                div.innerHTML = `<strong>${title}</strong><br><a href="${url}" target="_blank">${url}</a>`;
+              }
+              container.appendChild(div);
+            });
+          }
         });
     });
   </script>
+
 </body>
 </html>
