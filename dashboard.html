@@ -1,1 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Godfrey Mumbi Academy Dashboard</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+      color: #333;
+    }
+    header {
+      background-color: #222;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+    }
+    section {
+      padding: 1.5rem;
+      border-bottom: 1px solid #ddd;
+    }
+    h2 {
+      margin-top: 0;
+    }
+    .subject-section {
+      margin-bottom: 2rem;
+      border-radius: 8px;
+      padding: 1rem;
+    }
+    .math { background-color: #f2f2f2; }
+    .english { background-color: #e0f7fa; }
+    .science { background-color: #e8f5e9; }
+    .biology { background-color: #f3e5f5; }
+    .chemistry { background-color: #fff3e0; }
+
+    iframe {
+      max-width: 100%;
+      margin: 0.5rem 0;
+    }
+
+    footer {
+      background-color: orange;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-style: italic;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .toggle-button {
+      background-color: #444;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      margin-top: 1rem;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .toggle-content {
+      display: none;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Subject Dashboard</h1>
+  </header>
+
+  <main>
+    <!-- Mathematics -->
+    <section class="subject-section math">
+      <h2>Mathematics</h2>
+      <button class="toggle-button" onclick="toggleContent(this)">🎥 Videos</button>
+      <div class="toggle-content">
+        <iframe src="https://www.youtube.com/embed/8arr7OT2P6w" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/MJULvvEgv1I" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/Ex23sb9NwEY" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <button class="toggle-button" onclick="toggleContent(this)">📚 Materials</button>
+      <div class="toggle-content">
+        <strong>Pamphlets</strong>
+        <ul></ul>
+        <strong>Textbooks</strong>
+        <ul></ul>
+      </div>
+      <button class="toggle-button" onclick="toggleContent(this)">📝 Test Yourself</button>
+      <div class="toggle-content">
+        <ul></ul>
+      </div>
+    </section>
+
+    <!-- English -->
+    <section class="subject-section english">
+      <h2>English</h2>
+      <button class="toggle-button" onclick="toggleContent(this)">🎥 Videos</button>
+      <div class="toggle-content">
+        <iframe src="https://www.youtube.com/embed/Vw5OZQLj5OY" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <button class="toggle-button" onclick="toggleContent(this)">📚 Materials</button>
+      <div class="toggle-content">
+        <strong>Pamphlets</strong>
+        <ul></ul>
+        <strong>Textbooks</strong>
+        <ul></ul>
+      </div>
+      <button class="toggle-button" onclick="toggleContent(this)">📝 Test Yourself</button>
+      <div class="toggle-content">
+        <ul></ul>
+      </div>
+    </section>
+
+    <!-- Science -->
+    <section class="subject-section science">
+      <h2>Science (Physics)</h2>
+      <button class="toggle-button" onclick="toggleContent(this)">🎥 Videos</button>
+      <div class="toggle-content">
+        <iframe src="https://www.youtube.com/embed/mPTgM2lbFQU" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/65z-ekSTam8" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <button class="toggle-button" onclick="toggleContent(this)">📚 Materials</button>
+      <div class="toggle-content">
+        <strong>Pamphlets</strong>
+        <ul></ul>
+        <strong>Textbooks</strong>
+        <ul></ul>
+      </div>
+      <button class="toggle-button" onclick="toggleContent(this)">📝 Test Yourself</button>
+      <div class="toggle-content">
+        <ul></ul>
+      </div>
+    </section>
+
+    <!-- Biology -->
+    <section class="subject-section biology">
+      <h2>Biology</h2>
+      <button class="toggle-button" onclick="toggleContent(this)">🎥 Videos</button>
+      <div class="toggle-content">
+        <iframe src="https://www.youtube.com/embed/Wy3oxPLdEx8" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <button class="toggle-button" onclick="toggleContent(this)">📚 Materials</button>
+      <div class="toggle-content">
+        <strong>Pamphlets</strong>
+        <ul></ul>
+        <strong>Textbooks</strong>
+        <ul></ul>
+      </div>
+      <button class="toggle-button" onclick="toggleContent(this)">📝 Test Yourself</button>
+      <div class="toggle-content">
+        <ul></ul>
+      </div>
+    </section>
+
+    <!-- Chemistry -->
+    <section class="subject-section chemistry">
+      <h2>Chemistry</h2>
+      <button class="toggle-button" onclick="toggleContent(this)">🎥 Videos</button>
+      <div class="toggle-content">
+        <iframe src="https://www.youtube.com/embed/K0lqOwbxFfs" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <button class="toggle-button" onclick="toggleContent(this)">📚 Materials</button>
+      <div class="toggle-content">
+        <strong>Pamphlets</strong>
+        <ul></ul>
+        <strong>Textbooks</strong>
+        <ul></ul>
+      </div>
+      <button class="toggle-button" onclick="toggleContent(this)">📝 Test Yourself</button>
+      <div class="toggle-content">
+        <ul></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Godfrey Mumbi Academy — The way to simplify your education journey, the way to go.
+  </footer>
+
+  <script>
+    function toggleContent(button) {
+      const content = button.nextElementSibling;
+      content.style.display = content.style.display === "block" ? "none" : "block";
+    }
+  </script>
+
+  <!-- AUTO‑LOADER SCRIPT – GitHub **and** Google Drive support. -------------------------------------------------- -->
+  <script>
+    (async () => {
+      /*━━━━━━━━ 1. BASIC CONFIG ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+      const repoOwner = "YOUR_GITHUB_USERNAME"; // 🔁 Replace
+      const repoName  = "YOUR_REPOSITORY_NAME"; // 🔁 Replace
+      const branch    = "main";                 // 🔁 Replace if needed
+
+      const DRIVE_API_KEY = "YOUR_GOOGLE_API_KEY"; // 🔁 Replace (public API key)
+
+      /*━━━━━━━━ 2. PATH / FOLDER MAP ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+      const SUBJECT_PATHS = {
+        Mathematics: {
+          github: {
+            pamphlets: "materials/pamphlets/mathematics",
+            textbooks: "materials/textbooks/mathematics",
+            quizzes:   "quizzes/mathematics"
+          },
+          drive: {
+            pamphlets: "GOOGLE_DRIVE_FOLDER_ID_1", // 🔁 Replace with actual folder IDs or leave as "" if none
+            textbooks: "GOOGLE_DRIVE_FOLDER_ID_2",
+            quizzes:   "GOOGLE_DRIVE_FOLDER_ID_3"
+          }
+        },
+        English: {
+          github: {
+            pamphlets: "materials/pamphlets/english",
+            textbooks: "materials/textbooks/english",
+            quizzes:   "quizzes/english"
+          },
+          drive: {
+            pamphlets: "",
+            textbooks: "",
+            quizzes:   ""
+          }
+        },
+        "Science (Physics)": {
+          github: {
+            pamphlets: "materials/pamphlets/science",
+            textbooks: "materials/textbooks/science",
+            quizzes:   "quizzes/science"
+          },
+          drive: {
+            pamphlets: "",
+            textbooks: "",
+            quizzes:   ""
+          }
+        },
+        Biology: {
+          github: {
+            pamphlets: "materials/pamphlets/biology",
+            textbooks: "materials/textbooks/biology",
+            quizzes:   "quizzes/biology"
+          },
+          drive: {
+            pamphlets: "",
+            textbooks: "",
+            quizzes:   ""
+          }
+        },
+        Chemistry: {
+          github: {
+            pamphlets: "materials/pamphlets/chemistry",
+            textbooks: "materials/textbooks/chemistry",
+            quizzes:   "quizzes/chemistry"
+          },
+          drive: {
+            pamphlets: "",
+            textbooks: "",
+            quizzes:   ""
+          }
+        }
+      };
+
+      /*━━━━━━━━ 3. HELPERS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━────*/
+      async function getGitHubFiles(path) {
+        if (!path) return [];
+        const api = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${path}?ref=${branch}`;
+        try {
+          const res = await fetch(api);
+          if (!res.ok) return [];
+          const data = await res.json();
+          return data.filter(item => item.type === "file");
+        } catch (_) {
+          return [];
+        }
+      }
+
+      async function getDriveFiles(folderId) {
+        if (!folderId) return [];
+        const query = encodeURIComponent(`'${folderId}' in parents and trashed=false`);
+        const fields = encodeURIComponent("files(id,name)");
+        const api = `https://www.googleapis.com/drive/v3/files?q=${query}&fields=${fields}&key=${DRIVE_API_KEY}`;
+        try {
+          const res = await fetch(api);
+          if (!res.ok) return [];
+          const { files } = await res.json();
+          // Map to GitHub-like shape { download_url, name }
+          return files.map(f => ({
+            download_url: `https://drive.google.com/file/d/${f.id}/view`,
+            name: f.name
+          }));
+        } catch (_) {
+          return [];
+        }
+      }
+
+      function injectList(container, files) {
+        if (!files.length) return;
+        const ul = container.querySelector("ul") || container.appendChild(document.createElement("ul"));
+        files.forEach(f => {
+          const li = document.createElement("li");
+          const a  = document.createElement("a");
+          a.target = "_blank";
+          a.href   = f.download_url;
+          a.textContent = f.name.replace(/\.[^.]+$/, "");
+          li.appendChild(a);
+          ul.appendChild(li);
+        });
+      }
+
+      /*━━━━━━━━ 4. MAIN POPULATION LOOP ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+      for (const [subject, paths] of Object.entries(SUBJECT_PATHS)) {
+        const section = Array.from(document.querySelectorAll(".subject-section"))
+          .find(sec => sec.querySelector("h2")?.textContent.trim() === subject);
+        if (!section) continue;
+
+        const blocks = section.querySelectorAll(".toggle-content"); // 0=videos, 1=materials, 2=quizzes
+        if (blocks.length < 3) continue;
+
+        // ── 4a. GITHUB MATERIALS ────────────────────────────────────────
+        const ghPamphlets = await getGitHubFiles(paths.github?.pamphlets);
+        const ghTextbooks = await getGitHubFiles(paths.github?.textbooks);
+        injectList(blocks[1], [...ghPamphlets, ...ghTextbooks]);
+
+        const ghQuizzes = await getGitHubFiles(paths.github?.quizzes);
+        injectList(blocks[2], ghQuizzes);
+
+        // ── 4b. DRIVE MATERIALS ─────────────────────────────────────────
+        const drPamphlets = await getDriveFiles(paths.drive?.pamphlets);
+        const drTextbooks = await getDriveFiles(paths.drive?.textbooks);
+        injectList(blocks[1], [...drPamphlets, ...drTextbooks]);
+
+        const drQuizzes = await getDriveFiles(paths.drive?.quizzes);
+        injectList(blocks[2], drQuizzes);
+      }
+    })();
+  </script>
+</body>
+</html>
+
 
