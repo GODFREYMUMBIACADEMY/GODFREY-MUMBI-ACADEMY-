@@ -2,122 +2,228 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Godfrey Mumbi Academy</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <title>Godfrey Mumbi Academy Dashboard</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
   <style>
-    :root {
-      --dark-bg: #2b2b38;
-      --light-text: #f1f1f1;
-      --primary: #3498db;
-      --orange: #f39c12;
-      --subject-blue: #2980b9;
-      --subject-green: #27ae60;
-      --subject-purple: #9b59b6;
-      --subject-red: #e74c3c;
-      --subject-gray: #7f8c8d;
-      --yt: #ff0000;
-      --wa: #25d366;
-      --mail: #d44638;
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--dark-bg);
-      color: var(--light-text);
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+      color: #333;
+      overflow: hidden;
+    }
+    header {
+      background-color: #222;
+      color: #fff;
+      padding: 1rem;
       text-align: center;
     }
-
-    h1 { font-size: 2.5rem; margin-bottom: 1.4rem; }
-    h2 { font-size: 1.4rem; margin-bottom: 1rem; color: var(--orange); }
-
-    .section-title { color: var(--primary); font-size: 1.2rem; margin-top: 1.4rem; margin-bottom: 0.4rem; }
-
-    ul { list-style: none; padding: 0; margin-bottom: 1rem; }
-    li { margin: 0.28rem 0; font-weight: 600; color: var(--light-text); }
-
-    .login-btn {
-      margin-top: 1.3rem;
-      padding: 0.8rem 2rem;
-      font-size: 1rem;
-      border: none;
-      border-radius: 6px;
-      background: var(--primary);
-      color: white;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      cursor: pointer;
-      transition: background 0.25s;
+    section {
+      padding: 1rem;
+      border-bottom: 1px solid #ddd;
     }
-    .login-btn i { color: var(--orange); }
-    .login-btn:hover { background: #2471a3; }
+    h2 {
+      margin-top: 0;
+    }
+    .subject-section {
+      border-radius: 8px;
+      padding: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .math { background-color: #f2f2f2; }
+    .english { background-color: #e0f7fa; }
+    .science { background-color: #e8f5e9; }
+    .biology { background-color: #f3e5f5; }
+    .chemistry { background-color: #fff3e0; }
 
-    .social-icons { display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; }
-    .social-icons a { color: white; text-decoration: none; display: flex; flex-direction: column; align-items: center; transition: transform 0.2s; }
-    .social-icons a:hover { transform: scale(1.1); }
-    .fa-whatsapp { color: var(--wa); }
-    .fa-youtube { color: var(--yt); }
-    .fa-envelope { color: var(--mail); }
+    iframe {
+      max-width: 100%;
+      height: 140px;
+      margin: 0.3rem 0;
+    }
 
-    footer { margin-top: 2rem; font-size: 0.85rem; color: var(--light-text); }
+    footer {
+      background-color: orange;
+      color: white;
+      text-align: center;
+      padding: 0.8rem;
+      font-style: italic;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .toggle-button {
+      background-color: #444;
+      color: #fff;
+      padding: 0.3rem 0.7rem;
+      margin-top: 0.5rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 0.9rem;
+      cursor: default;
+    }
+
+    .toggle-content {
+      display: block !important;
+      margin-top: 0.5rem;
+    }
+
+    main {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: flex-start;
+      gap: 0.6rem;
+      padding: 0.5rem;
+      height: calc(100vh - 150px);
+      overflow-y: hidden;
+    }
+
+    section.subject-section {
+      flex: 1 1 19%;
+      max-width: 19%;
+      box-sizing: border-box;
+      overflow-y: auto;
+      height: 100%;
+    }
   </style>
 </head>
 <body>
-  <h1>Welcome to Godfrey Mumbi Academy</h1>
-  <h2>We offer the following:</h2>
-
-  <div class="section-title">📚 SUBJECTS</div>
-  <ul class="subjects">
-    <li>📘 English</li>
-    <li>🔬 Science</li>
-    <li>🧬 Biology</li>
-    <li>⚗️ Chemistry</li>
-    <li>➗ Mathematics</li>
-  </ul>
-
-  <div class="section-title">💡 TIPS</div>
-  <ul>
-    <li>🧠 Preparation for Exams</li>
-    <li>📖 How to Study Smart, not just hard</li>
-    <li>🏆 How to obtain good results at Secondary School level</li>
-  </ul>
-
-  <button class="login-btn" id="loginBtn"><i class="fas fa-key"></i> LOGIN</button>
-
-  <div class="social-icons">
-    <a href="https://wa.me/260976125340" target="_blank"><i class="fab fa-whatsapp fa-2x"></i><span>WhatsApp</span></a>
-    <a href="https://www.youtube.com/@GODFREYMUMBIACADEMY" target="_blank"><i class="fab fa-youtube fa-2x"></i><span>YouTube</span></a>
-    <a href="mailto:gm2860702@gmail.com"><i class="fas fa-envelope fa-2x"></i><span>Email</span></a>
-  </div>
-
-  <footer>&copy; <span id="year"></span> Godfrey Mumbi Academy. All rights reserved.</footer>
-
   <script>
-    // footer year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // simple password gate
-    const PASSWORD = 'GMA2025'; // change this in GitHub to update password
-
-    document.getElementById('loginBtn').addEventListener('click', () => {
-      const pass = prompt('Enter password to access the dashboard:');
-      if (pass === PASSWORD) {
-        window.location.href = 'dashboard.html';
-      } else if (pass !== null) {
-        alert('Incorrect password.');
-      }
-    });
+    const pass = prompt("Enter Password to Access:");
+    if (pass !== "Mumbi C Godfrey") {
+      alert("Incorrect Password!");
+      document.body.innerHTML = "<h2 style='text-align:center;margin-top:20vh;'>Access Denied</h2>";
+      throw new Error("Access Denied");
+    }
   </script>
+
+  <header>
+    <h1>Subject Dashboard</h1>
+  </header>
+
+  <main>
+    <!-- Subject Sections: All content already visible -->
+    <!-- Mathematics -->
+    <section class="subject-section math">
+      <h2>Mathematics</h2>
+      <button class="toggle-button">🎥 Videos</button>
+      <div class="toggle-content">
+        <iframe src="https://www.youtube.com/embed/8arr7OT2P6w"></iframe>
+        <iframe src="https://www.youtube.com/embed/MJULvvEgv1I"></iframe>
+        <iframe src="https://www.youtube.com/embed/Ex23sb9NwEY"></iframe>
+      </div>
+      <button class="toggle-button">📚 Materials</button>
+      <div class="toggle-content">
+        <strong>Pamphlets</strong>
+        <ul><li><a href="materials/pamphlets/math-pamphlet1.pdf" target="_blank">Math Pamphlet 1</a></li></ul>
+        <strong>Textbooks</strong>
+        <ul><li><a href="materials/textbooks/math-textbook1.pdf" target="_blank">Math Textbook 1</a></li></ul>
+      </div>
+      <button class="toggle-button">📝 Test Yourself</button>
+      <div class="toggle-content">
+        <ul><li><a href="quizzes/math-quiz1.pdf" target="_blank">Math Quiz 1</a></li></ul>
+      </div>
+    </section>
+
+    <!-- English -->
+    <section class="subject-section english">
+      <h2>English</h2>
+      <button class="toggle-button">🎥 Videos</button>
+      <div class="toggle-content">
+        <iframe src="https://www.youtube.com/embed/Vw5OZQLj5OY"></iframe>
+      </div>
+      <button class="toggle-button">📚 Materials</button>
+      <div class="toggle-content">
+        <strong>Pamphlets</strong>
+        <ul><li><a href="materials/pamphlets/english-pamphlet1.pdf" target="_blank">English Pamphlet 1</a></li></ul>
+        <strong>Textbooks</strong>
+        <ul><li><a href="materials/textbooks/english-textbook1.pdf" target="_blank">English Textbook 1</a></li></ul>
+      </div>
+      <button class="toggle-button">📝 Test Yourself</button>
+      <div class="toggle-content">
+        <ul><li><a href="quizzes/english-quiz1.pdf" target="_blank">English Quiz 1</a></li></ul>
+      </div>
+    </section>
+
+    <!-- Science -->
+    <section class="subject-section science">
+      <h2>Science</h2>
+      <button class="toggle-button">🎥 Videos</button>
+      <div class="toggle-content">
+        <iframe src="https://www.youtube.com/embed/mPTgM2lbFQU"></iframe>
+        <iframe src="https://www.youtube.com/embed/65z-ekSTam8"></iframe>
+      </div>
+      <button class="toggle-button">📚 Materials</button>
+      <div class="toggle-content">
+        <strong>Pamphlets</strong>
+        <ul><li><a href="materials/pamphlets/science-pamphlet1.pdf" target="_blank">Science Pamphlet 1</a></li></ul>
+        <strong>Textbooks</strong>
+        <ul><li><a href="materials/textbooks/science-textbook1.pdf" target="_blank">Science Textbook 1</a></li></ul>
+      </div>
+      <button class="toggle-button">📝 Test Yourself</button>
+      <div class="toggle-content">
+        <ul><li><a href="quizzes/science-quiz1.pdf" target="_blank">Science Quiz 1</a></li></ul>
+      </div>
+    </section>
+
+    <!-- Biology -->
+    <section class="subject-section biology">
+      <h2>Biology</h2>
+      <button class="toggle-button">🎥 Videos</button>
+      <div class="toggle-content">
+        <iframe src="https://www.youtube.com/embed/Wy3oxPLdEx8"></iframe>
+      </div>
+      <button class="toggle-button">📚 Materials</button>
+      <div class="toggle-content">
+        <strong>Pamphlets</strong>
+        <ul><li><a href="materials/pamphlets/biology-pamphlet1.pdf" target="_blank">Biology Pamphlet 1</a></li></ul>
+        <strong>Textbooks</strong>
+        <ul><li><a href="materials/textbooks/biology-textbook1.pdf" target="_blank">Biology Textbook 1</a></li></ul>
+      </div>
+      <button class="toggle-button">📝 Test Yourself</button>
+      <div class="toggle-content">
+        <ul><li><a href="quizzes/biology-quiz1.pdf" target="_blank">Biology Quiz 1</a></li></ul>
+      </div>
+    </section>
+
+    <!-- Chemistry -->
+    <section class="subject-section chemistry">
+      <h2>Chemistry</h2>
+      <button class="toggle-button">🎥 Videos</button>
+      <div class="toggle-content">
+        <iframe src="https://www.youtube.com/embed/K0lqOwbxFfs"></iframe>
+      </div>
+      <button class="toggle-button">📚 Materials</button>
+      <div class="toggle-content">
+        <strong>Pamphlets</strong>
+        <ul><li><a href="materials/pamphlets/chemistry-pamphlet1.pdf" target="_blank">Chemistry Pamphlet 1</a></li></ul>
+        <strong>Textbooks</strong>
+        <ul><li><a href="materials/textbooks/chemistry-textbook1.pdf" target="_blank">Chemistry Textbook 1</a></li></ul>
+      </div>
+      <button class="toggle-button">📝 Test Yourself</button>
+      <div class="toggle-content">
+        <ul><li><a href="quizzes/chemistry-quiz1.pdf" target="_blank">Chemistry Quiz 1</a></li></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Godfrey Mumbi Academy — The way to simplify your education journey, the way to go.
+  </footer>
 </body>
 </html>
-
