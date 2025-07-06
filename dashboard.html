@@ -7,25 +7,15 @@
   <title>Godfrey Mumbi Academy Dashboard</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
   <style>
-    :root {
-      --math: #34495e;
-      --english: #1e88e5;
-      --physics: #2e7d32;
-      --biology: #00897b;
-      --chemistry: #5d4037;
-      --tips: #455a64;
-      --motivation: #6d4c41;
-    }
-    * { box-sizing: border-box; }
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
       background-color: #121212;
-      color: #e0e0e0;
+      color: #f0f0f0;
     }
     header {
-      background-color: #000;
+      background-color: #1e1e1e;
       color: #fff;
       padding: 1rem;
       text-align: center;
@@ -34,51 +24,59 @@
       padding: 1.5rem;
       border-bottom: 1px solid #333;
     }
-    h2 { margin-top: 0; font-size: 1.6rem; }
+    h2 {
+      margin-top: 0;
+    }
     .subject-section {
       margin-bottom: 2rem;
       border-radius: 8px;
       padding: 1rem;
-      color: #fff;
     }
-    .math { background-color: var(--math); }
-    .english { background-color: var(--english); }
-    .physics { background-color: var(--physics); }
-    .biology { background-color: var(--biology); }
-    .chemistry { background-color: var(--chemistry); }
-    .tips { background-color: var(--tips); }
-    .motivation { background-color: var(--motivation); }
+    .math { background-color: #2c2c2c; }
+    .english { background-color: #1b2a33; }
+    .physics { background-color: #2a1b2e; }
+    .biology { background-color: #243b24; }
+    .chemistry { background-color: #3a2e1e; }
+    .study { background-color: #203040; }
+    .motivation { background-color: #301f1f; }
 
     iframe {
-      width: 100%;
-      max-width: 560px;
-      height: 315px;
+      max-width: 100%;
       margin: 0.5rem 0;
-      border: none;
     }
 
     footer {
-      background-color: #000;
-      color: #fff;
+      background-color: orange;
+      color: white;
       text-align: center;
       padding: 1rem;
       font-style: italic;
     }
 
     ul { padding-left: 1.2rem; }
-    a { color: #90caf9; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    a {
+      color: #6ab7ff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
     .toggle-button {
-      background-color: rgba(255,255,255,0.15);
+      background-color: #333;
       color: #fff;
       padding: 0.5rem 1rem;
       margin-top: 1rem;
-      border: 1px solid rgba(255,255,255,0.3);
+      border: none;
       cursor: pointer;
       border-radius: 5px;
       font-size: 1rem;
     }
-    .toggle-content { display: none; margin-top: 1rem; }
+
+    .toggle-content {
+      display: none;
+      margin-top: 1rem;
+    }
   </style>
 </head>
 <body>
@@ -88,94 +86,160 @@
 
   <main>
     <!-- Mathematics -->
-    <section class="subject-section math">
+    <section class="subject-section math" id="math">
       <h2>Mathematics</h2>
       <button class="toggle-button" onclick="toggleContent(this)">🎥 Videos</button>
-      <div class="toggle-content" id="math-videos"><p>Loading videos...</p></div>
+      <div class="toggle-content" id="math-videos"></div>
+
       <button class="toggle-button" onclick="toggleContent(this)">📚 Materials</button>
-      <div class="toggle-content">
-        <strong>Pamphlets</strong>
-        <ul><li><a href="materials/pamphlets/math-pamphlet1.pdf" target="_blank">Math Pamphlet 1</a></li></ul>
-        <strong>Textbooks</strong>
-        <ul><li><a href="materials/textbooks/math-textbook1.pdf" target="_blank">Math Textbook 1</a></li></ul>
-      </div>
+      <div class="toggle-content" id="math-materials"></div>
+
       <button class="toggle-button" onclick="toggleContent(this)">📝 Test Yourself</button>
-      <div class="toggle-content"><ul><li><a href="quizzes/math-quiz1.pdf" target="_blank">Math Quiz 1</a></li></ul></div>
+      <div class="toggle-content" id="math-quizzes"></div>
     </section>
 
     <!-- English -->
-    <section class="subject-section english">
+    <section class="subject-section english" id="english">
       <h2>English</h2>
       <button class="toggle-button" onclick="toggleContent(this)">🎥 Videos</button>
-      <div class="toggle-content" id="english-videos"><p>Loading videos...</p></div>
+      <div class="toggle-content" id="english-videos"></div>
+
       <button class="toggle-button" onclick="toggleContent(this)">📚 Materials</button>
-      <div class="toggle-content">
-        <strong>Pamphlets</strong>
-        <ul><li><a href="materials/pamphlets/english-pamphlet1.pdf" target="_blank">English Pamphlet 1</a></li></ul>
-        <strong>Textbooks</strong>
-        <ul><li><a href="materials/textbooks/english-textbook1.pdf" target="_blank">English Textbook 1</a></li></ul>
-      </div>
+      <div class="toggle-content" id="english-materials"></div>
+
       <button class="toggle-button" onclick="toggleContent(this)">📝 Test Yourself</button>
-      <div class="toggle-content"><ul><li><a href="quizzes/english-quiz1.pdf" target="_blank">English Quiz 1</a></li></ul></div>
+      <div class="toggle-content" id="english-quizzes"></div>
     </section>
 
     <!-- Physics -->
-    <section class="subject-section physics">
+    <section class="subject-section physics" id="physics">
       <h2>Physics</h2>
       <button class="toggle-button" onclick="toggleContent(this)">🎥 Videos</button>
-      <div class="toggle-content" id="physics-videos"><p>Loading videos...</p></div>
+      <div class="toggle-content" id="physics-videos"></div>
+
       <button class="toggle-button" onclick="toggleContent(this)">📚 Materials</button>
-      <div class="toggle-content">
-        <strong>Pamphlets</strong>
-        <ul><li><a href="materials/pamphlets/physics-pamphlet1.pdf" target="_blank">Physics Pamphlet 1</a></li></ul>
-        <strong>Textbooks</strong>
-        <ul><li><a href="materials/textbooks/physics-textbook1.pdf" target="_blank">Physics Textbook 1</a></li></ul>
-      </div>
+      <div class="toggle-content" id="physics-materials"></div>
+
       <button class="toggle-button" onclick="toggleContent(this)">📝 Test Yourself</button>
-      <div class="toggle-content"><ul><li><a href="quizzes/physics-quiz1.pdf" target="_blank">Physics Quiz 1</a></li></ul></div>
+      <div class="toggle-content" id="physics-quizzes"></div>
     </section>
 
     <!-- Biology -->
-    <section class="subject-section biology">
+    <section class="subject-section biology" id="biology">
       <h2>Biology</h2>
       <button class="toggle-button" onclick="toggleContent(this)">🎥 Videos</button>
-      <div class="toggle-content" id="biology-videos"><p>Loading videos...</p></div>
+      <div class="toggle-content" id="biology-videos"></div>
+
       <button class="toggle-button" onclick="toggleContent(this)">📚 Materials</button>
-      <div class="toggle-content">
-        <strong>Pamphlets</strong>
-        <ul><li><a href="materials/pamphlets/biology-pamphlet1.pdf" target="_blank">Biology Pamphlet 1</a></li></ul>
-        <strong>Textbooks</strong>
-        <ul><li><a href="materials/textbooks/biology-textbook1.pdf" target="_blank">Biology Textbook 1</a></li></ul>
-      </div>
+      <div class="toggle-content" id="biology-materials"></div>
+
       <button class="toggle-button" onclick="toggleContent(this)">📝 Test Yourself</button>
-      <div class="toggle-content"><ul><li><a href="quizzes/biology-quiz1.pdf" target="_blank">Biology Quiz 1</a></li></ul></div>
+      <div class="toggle-content" id="biology-quizzes"></div>
     </section>
 
     <!-- Chemistry -->
-    <section class="subject-section chemistry">
+    <section class="subject-section chemistry" id="chemistry">
       <h2>Chemistry</h2>
       <button class="toggle-button" onclick="toggleContent(this)">🎥 Videos</button>
-      <div class="toggle-content" id="chemistry-videos"><p>Loading videos...</p></div>
+      <div class="toggle-content" id="chemistry-videos"></div>
+
       <button class="toggle-button" onclick="toggleContent(this)">📚 Materials</button>
-      <div class="toggle-content">
-        <strong>Pamphlets</strong>
-        <ul><li><a href="materials/pamphlets/chemistry-pamphlet1.pdf" target="_blank">Chemistry Pamphlet 1</a></li></ul>
-        <strong>Textbooks</strong>
-        <ul><li><a href="materials/textbooks/chemistry-textbook1.pdf" target="_blank">Chemistry Textbook 1</a></li></ul>
-      </div>
+      <div class="toggle-content" id="chemistry-materials"></div>
+
       <button class="toggle-button" onclick="toggleContent(this)">📝 Test Yourself</button>
-      <div class="toggle-content"><ul><li><a href="quizzes/chemistry-quiz1.pdf" target="_blank">Chemistry Quiz 1</a></li></ul></div>
+      <div class="toggle-content" id="chemistry-quizzes"></div>
     </section>
 
     <!-- Study/Exam Tips -->
-    <section class="subject-section tips">
+    <section class="subject-section study" id="study-tips">
       <h2>Study/Exam Tips</h2>
       <button class="toggle-button" onclick="toggleContent(this)">🎥 Videos</button>
-      <div class="toggle-content" id="tips-videos"><p>Loading videos...</p></div>
+      <div class="toggle-content" id="study-tips-videos"></div>
     </section>
 
     <!-- Motivation -->
-    <section class="subject-section motivation">
+    <section class="subject-section motivation" id="motivation">
       <h2>Motivation Videos</h2>
-      <button class="toggle-button" onclick="toggleContent
+      <button class="toggle-button" onclick="toggleContent(this)">🎥 Videos</button>
+      <div class="toggle-content" id="motivation-videos"></div>
+    </section>
+  </main>
 
+  <footer>
+    Godfrey Mumbi Academy — The way to simplify your education journey, the way to go.
+  </footer>
+
+  <script>
+    function toggleContent(button) {
+      const content = button.nextElementSibling;
+      content.style.display = content.style.display === "block" ? "none" : "block";
+    }
+
+    function loadVideoList(elementId, filePath) {
+      fetch(filePath)
+        .then(response => response.text())
+        .then(data => {
+          const links = data.trim().split("\n");
+          const container = document.getElementById(elementId);
+          links.forEach(link => {
+            const videoId = extractYouTubeID(link.trim());
+            if (videoId) {
+              const iframe = document.createElement("iframe");
+              iframe.src = `https://www.youtube.com/embed/${videoId}`;
+              iframe.frameBorder = 0;
+              iframe.allowFullscreen = true;
+              iframe.width = "100%";
+              iframe.height = "315";
+              container.appendChild(iframe);
+            }
+          });
+        });
+    }
+
+    function loadLinkList(elementId, filePath, label) {
+      fetch(filePath)
+        .then(response => response.text())
+        .then(data => {
+          const links = data.trim().split("\n");
+          const container = document.getElementById(elementId);
+          const section = document.createElement("div");
+          const title = document.createElement("strong");
+          title.innerText = label;
+          section.appendChild(title);
+          const ul = document.createElement("ul");
+          links.forEach(link => {
+            const li = document.createElement("li");
+            const a = document.createElement("a");
+            a.href = link.trim();
+            a.innerText = getFileName(link);
+            a.target = "_blank";
+            li.appendChild(a);
+            ul.appendChild(li);
+          });
+          section.appendChild(ul);
+          container.appendChild(section);
+        });
+    }
+
+    function extractYouTubeID(url) {
+      const match = url.match(/(?:youtu\.be\/|v=)([A-Za-z0-9_-]{11})/);
+      return match ? match[1] : null;
+    }
+
+    function getFileName(url) {
+      return decodeURIComponent(url.split("/").pop());
+    }
+
+    // Load all content dynamically from your repository
+    const subjects = ["math", "english", "physics", "biology", "chemistry"];
+    subjects.forEach(subject => {
+      loadVideoList(`${subject}-videos`, `videos/${subject}-videos.txt`);
+      loadLinkList(`${subject}-materials`, `materials/${subject}-materials.txt`, "Pamphlets & Textbooks");
+      loadLinkList(`${subject}-quizzes`, `quizzes/${subject}-quizzes.txt`, "Quizzes");
+    });
+
+    loadVideoList("study-tips-videos", "videos/study-tips.txt");
+    loadVideoList("motivation-videos", "videos/motivation-videos.txt");
+  </script>
+</body>
+</html>
