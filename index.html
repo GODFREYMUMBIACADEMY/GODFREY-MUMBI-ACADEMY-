@@ -2,228 +2,148 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Godfrey Mumbi Academy Dashboard</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <title>Godfrey Mumbi Academy</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      background-color: #ffffff;
-      color: #333;
-      overflow: hidden;
     }
-    header {
-      background-color: #222;
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #262834;
       color: #fff;
-      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
       text-align: center;
-    }
-    section {
       padding: 1rem;
-      border-bottom: 1px solid #ddd;
     }
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
     h2 {
-      margin-top: 0;
-    }
-    .subject-section {
-      border-radius: 8px;
-      padding: 0.5rem;
-      margin-bottom: 0.5rem;
-    }
-    .math { background-color: #f2f2f2; }
-    .english { background-color: #e0f7fa; }
-    .science { background-color: #e8f5e9; }
-    .biology { background-color: #f3e5f5; }
-    .chemistry { background-color: #fff3e0; }
-
-    iframe {
-      max-width: 100%;
-      height: 140px;
-      margin: 0.3rem 0;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #ffb400;
+      margin-bottom: 1rem;
     }
 
-    footer {
-      background-color: orange;
-      color: white;
-      text-align: center;
-      padding: 0.8rem;
-      font-style: italic;
+    h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #23a8ff;
+      margin: 1rem 0 0.5rem;
     }
 
     ul {
-      padding-left: 1.2rem;
+      list-style: none;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      margin-bottom: 0.5rem;
+    }
+
+    .login-btn {
+      margin: 1rem 0;
+      padding: 0.5rem 2rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      background: #2196f3;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .socials {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .social-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 0.85rem;
+    }
+
+    .social-item i {
+      font-size: 1.5rem;
     }
 
     a {
-      color: #0066cc;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .toggle-button {
-      background-color: #444;
       color: #fff;
-      padding: 0.3rem 0.7rem;
-      margin-top: 0.5rem;
-      border: none;
-      border-radius: 5px;
-      font-size: 0.9rem;
-      cursor: default;
-    }
-
-    .toggle-content {
-      display: block !important;
-      margin-top: 0.5rem;
-    }
-
-    main {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      align-items: flex-start;
-      gap: 0.6rem;
-      padding: 0.5rem;
-      height: calc(100vh - 150px);
-      overflow-y: hidden;
-    }
-
-    section.subject-section {
-      flex: 1 1 19%;
-      max-width: 19%;
-      box-sizing: border-box;
-      overflow-y: auto;
-      height: 100%;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
+  <h1>Welcome to<br>Godfrey Mumbi Academy</h1>
+  <h2>We offer the following:</h2>
+
+  <h3>📚 SUBJECTS</h3>
+  <ul>
+    <li>📘 English</li>
+    <li>🔬 Science</li>
+    <li>🧬 Biology</li>
+    <li>⚗️ Chemistry</li>
+    <li>➗ Mathematics</li>
+  </ul>
+
+  <h3>💡 TIPS</h3>
+  <ul>
+    <li>🧠 Preparation for Exams</li>
+    <li>📖 How to Study Smart, not just hard</li>
+    <li>🏆 How to obtain good results at Secondary School level</li>
+  </ul>
+
+  <button class="login-btn" onclick="askPassword()">
+    🔑 LOGIN
+  </button>
+
+  <div class="socials">
+    <div class="social-item">
+      <i class="fab fa-whatsapp" style="color:#25d366"></i>
+      <a href="https://wa.me/" target="_blank">WhatsApp</a>
+    </div>
+    <div class="social-item">
+      <i class="fab fa-youtube" style="color:#ff0000"></i>
+      <a href="https://youtube.com/" target="_blank">YouTube</a>
+    </div>
+    <div class="social-item">
+      <i class="fas fa-envelope" style="color:#ff4d4f"></i>
+      <a href="mailto:">Email</a>
+    </div>
+  </div>
+
   <script>
-    const pass = prompt("Enter Password to Access:");
-    if (pass !== Mumbi C Godfrey) {
-      alert("Incorrect Password!");
-      document.body.innerHTML = "<h2 style='text-align:center;margin-top:20vh;'>Access Denied</h2>";
-      throw new Error("Access Denied");
+    const PASSWORD = 'Godfrey#2025';
+    const DASHBOARD_URL = 'dashboard.html';
+
+    function askPassword() {
+      const attempt = prompt('Enter password to access the dashboard:');
+      if (attempt === null) return;
+      if (attempt === PASSWORD) {
+        window.location.href = DASHBOARD_URL;
+      } else {
+        alert('Incorrect password. Please try again.');
+      }
     }
   </script>
-
-  <header>
-    <h1>Subject Dashboard</h1>
-  </header>
-
-  <main>
-    <!-- Subject Sections: All content already visible -->
-    <!-- Mathematics -->
-    <section class="subject-section math">
-      <h2>Mathematics</h2>
-      <button class="toggle-button">🎥 Videos</button>
-      <div class="toggle-content">
-        <iframe src="https://www.youtube.com/embed/8arr7OT2P6w"></iframe>
-        <iframe src="https://www.youtube.com/embed/MJULvvEgv1I"></iframe>
-        <iframe src="https://www.youtube.com/embed/Ex23sb9NwEY"></iframe>
-      </div>
-      <button class="toggle-button">📚 Materials</button>
-      <div class="toggle-content">
-        <strong>Pamphlets</strong>
-        <ul><li><a href="materials/pamphlets/math-pamphlet1.pdf" target="_blank">Math Pamphlet 1</a></li></ul>
-        <strong>Textbooks</strong>
-        <ul><li><a href="materials/textbooks/math-textbook1.pdf" target="_blank">Math Textbook 1</a></li></ul>
-      </div>
-      <button class="toggle-button">📝 Test Yourself</button>
-      <div class="toggle-content">
-        <ul><li><a href="quizzes/math-quiz1.pdf" target="_blank">Math Quiz 1</a></li></ul>
-      </div>
-    </section>
-
-    <!-- English -->
-    <section class="subject-section english">
-      <h2>English</h2>
-      <button class="toggle-button">🎥 Videos</button>
-      <div class="toggle-content">
-        <iframe src="https://www.youtube.com/embed/Vw5OZQLj5OY"></iframe>
-      </div>
-      <button class="toggle-button">📚 Materials</button>
-      <div class="toggle-content">
-        <strong>Pamphlets</strong>
-        <ul><li><a href="materials/pamphlets/english-pamphlet1.pdf" target="_blank">English Pamphlet 1</a></li></ul>
-        <strong>Textbooks</strong>
-        <ul><li><a href="materials/textbooks/english-textbook1.pdf" target="_blank">English Textbook 1</a></li></ul>
-      </div>
-      <button class="toggle-button">📝 Test Yourself</button>
-      <div class="toggle-content">
-        <ul><li><a href="quizzes/english-quiz1.pdf" target="_blank">English Quiz 1</a></li></ul>
-      </div>
-    </section>
-
-    <!-- Science -->
-    <section class="subject-section science">
-      <h2>Science</h2>
-      <button class="toggle-button">🎥 Videos</button>
-      <div class="toggle-content">
-        <iframe src="https://www.youtube.com/embed/mPTgM2lbFQU"></iframe>
-        <iframe src="https://www.youtube.com/embed/65z-ekSTam8"></iframe>
-      </div>
-      <button class="toggle-button">📚 Materials</button>
-      <div class="toggle-content">
-        <strong>Pamphlets</strong>
-        <ul><li><a href="materials/pamphlets/science-pamphlet1.pdf" target="_blank">Science Pamphlet 1</a></li></ul>
-        <strong>Textbooks</strong>
-        <ul><li><a href="materials/textbooks/science-textbook1.pdf" target="_blank">Science Textbook 1</a></li></ul>
-      </div>
-      <button class="toggle-button">📝 Test Yourself</button>
-      <div class="toggle-content">
-        <ul><li><a href="quizzes/science-quiz1.pdf" target="_blank">Science Quiz 1</a></li></ul>
-      </div>
-    </section>
-
-    <!-- Biology -->
-    <section class="subject-section biology">
-      <h2>Biology</h2>
-      <button class="toggle-button">🎥 Videos</button>
-      <div class="toggle-content">
-        <iframe src="https://www.youtube.com/embed/Wy3oxPLdEx8"></iframe>
-      </div>
-      <button class="toggle-button">📚 Materials</button>
-      <div class="toggle-content">
-        <strong>Pamphlets</strong>
-        <ul><li><a href="materials/pamphlets/biology-pamphlet1.pdf" target="_blank">Biology Pamphlet 1</a></li></ul>
-        <strong>Textbooks</strong>
-        <ul><li><a href="materials/textbooks/biology-textbook1.pdf" target="_blank">Biology Textbook 1</a></li></ul>
-      </div>
-      <button class="toggle-button">📝 Test Yourself</button>
-      <div class="toggle-content">
-        <ul><li><a href="quizzes/biology-quiz1.pdf" target="_blank">Biology Quiz 1</a></li></ul>
-      </div>
-    </section>
-
-    <!-- Chemistry -->
-    <section class="subject-section chemistry">
-      <h2>Chemistry</h2>
-      <button class="toggle-button">🎥 Videos</button>
-      <div class="toggle-content">
-        <iframe src="https://www.youtube.com/embed/K0lqOwbxFfs"></iframe>
-      </div>
-      <button class="toggle-button">📚 Materials</button>
-      <div class="toggle-content">
-        <strong>Pamphlets</strong>
-        <ul><li><a href="materials/pamphlets/chemistry-pamphlet1.pdf" target="_blank">Chemistry Pamphlet 1</a></li></ul>
-        <strong>Textbooks</strong>
-        <ul><li><a href="materials/textbooks/chemistry-textbook1.pdf" target="_blank">Chemistry Textbook 1</a></li></ul>
-      </div>
-      <button class="toggle-button">📝 Test Yourself</button>
-      <div class="toggle-content">
-        <ul><li><a href="quizzes/chemistry-quiz1.pdf" target="_blank">Chemistry Quiz 1</a></li></ul>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    Godfrey Mumbi Academy — The way to simplify your education journey, the way to go.
-  </footer>
 </body>
 </html>
+
