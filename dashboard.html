@@ -7,6 +7,7 @@
   <title>Godfrey Mumbi Academy Dashboard</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
   <style>
+    /* Your original CSS preserved */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -33,13 +34,13 @@
       padding: 1rem;
       color: white;
     }
-    .math { background-color: #1976d2; }        /* Blue */
-    .english { background-color: #e53935; }     /* Red */
-    .physics { background-color: #fb8c00; }     /* Orange */
-    .chemistry { background-color: #43a047; }   /* Green */
-    .biology { background-color: #8e24aa; }     /* Purple */
-    .study-tips { background-color: #6d4c41; }  /* Brown */
-    .motivation { background-color: #0097a7; }  /* Cyan */
+    .math { background-color: #1976d2; }
+    .english { background-color: #e53935; }
+    .physics { background-color: #fb8c00; }
+    .chemistry { background-color: #43a047; }
+    .biology { background-color: #8e24aa; }
+    .study-tips { background-color: #6d4c41; }
+    .motivation { background-color: #0097a7; }
 
     iframe {
       max-width: 100%;
@@ -90,7 +91,7 @@
     
     .video-container {
       position: relative;
-      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      padding-bottom: 56.25%;
       height: 0;
       overflow: hidden;
       margin: 0.5rem 0;
@@ -118,15 +119,15 @@
       <h2>Mathematics</h2>
       <button class="toggle-button" onclick="toggleContent(this)">🎥 Videos</button>
       <div class="toggle-content">
-        <div class="loading">Loading math videos...</div>
+        <div class="loading">Click to load math videos</div>
       </div>
       <button class="toggle-button" onclick="toggleContent(this)">📚 Materials</button>
       <div class="toggle-content">
-        <div class="loading">Loading math materials...</div>
+        <div class="loading">Click to load math materials</div>
       </div>
       <button class="toggle-button" onclick="toggleContent(this)">📝 Test Yourself</button>
       <div class="toggle-content">
-        <div class="loading">Loading math quizzes...</div>
+        <div class="loading">Click to load math quizzes</div>
       </div>
     </section>
 
@@ -135,15 +136,15 @@
       <h2>English</h2>
       <button class="toggle-button" onclick="toggleContent(this)">🎥 Videos</button>
       <div class="toggle-content">
-        <div class="loading">Loading English videos...</div>
+        <div class="loading">Click to load English videos</div>
       </div>
       <button class="toggle-button" onclick="toggleContent(this)">📚 Materials</button>
       <div class="toggle-content">
-        <div class="loading">Loading English materials...</div>
+        <div class="loading">Click to load English materials</div>
       </div>
       <button class="toggle-button" onclick="toggleContent(this)">📝 Test Yourself</button>
       <div class="toggle-content">
-        <div class="loading">Loading English quizzes...</div>
+        <div class="loading">Click to load English quizzes</div>
       </div>
     </section>
 
@@ -152,15 +153,15 @@
       <h2>Physics</h2>
       <button class="toggle-button" onclick="toggleContent(this)">🎥 Videos</button>
       <div class="toggle-content">
-        <div class="loading">Loading physics videos...</div>
+        <div class="loading">Click to load physics videos</div>
       </div>
       <button class="toggle-button" onclick="toggleContent(this)">📚 Materials</button>
       <div class="toggle-content">
-        <div class="loading">Loading physics materials...</div>
+        <div class="loading">Click to load physics materials</div>
       </div>
       <button class="toggle-button" onclick="toggleContent(this)">📝 Test Yourself</button>
       <div class="toggle-content">
-        <div class="loading">Loading physics quizzes...</div>
+        <div class="loading">Click to load physics quizzes</div>
       </div>
     </section>
 
@@ -169,15 +170,15 @@
       <h2>Chemistry</h2>
       <button class="toggle-button" onclick="toggleContent(this)">🎥 Videos</button>
       <div class="toggle-content">
-        <div class="loading">Loading chemistry videos...</div>
+        <div class="loading">Click to load chemistry videos</div>
       </div>
       <button class="toggle-button" onclick="toggleContent(this)">📚 Materials</button>
       <div class="toggle-content">
-        <div class="loading">Loading chemistry materials...</div>
+        <div class="loading">Click to load chemistry materials</div>
       </div>
       <button class="toggle-button" onclick="toggleContent(this)">📝 Test Yourself</button>
       <div class="toggle-content">
-        <div class="loading">Loading chemistry quizzes...</div>
+        <div class="loading">Click to load chemistry quizzes</div>
       </div>
     </section>
 
@@ -186,15 +187,15 @@
       <h2>Biology</h2>
       <button class="toggle-button" onclick="toggleContent(this)">🎥 Videos</button>
       <div class="toggle-content">
-        <div class="loading">Loading biology videos...</div>
+        <div class="loading">Click to load biology videos</div>
       </div>
       <button class="toggle-button" onclick="toggleContent(this)">📚 Materials</button>
       <div class="toggle-content">
-        <div class="loading">Loading biology materials...</div>
+        <div class="loading">Click to load biology materials</div>
       </div>
       <button class="toggle-button" onclick="toggleContent(this)">📝 Test Yourself</button>
       <div class="toggle-content">
-        <div class="loading">Loading biology quizzes...</div>
+        <div class="loading">Click to load biology quizzes</div>
       </div>
     </section>
 
@@ -203,7 +204,7 @@
       <h2>Study/Exam Tips</h2>
       <button class="toggle-button" onclick="toggleContent(this)">🎥 Videos</button>
       <div class="toggle-content">
-        <div class="loading">Loading study tips videos...</div>
+        <div class="loading">Click to load study tips</div>
       </div>
     </section>
 
@@ -212,7 +213,7 @@
       <h2>Motivation</h2>
       <button class="toggle-button" onclick="toggleContent(this)">🎥 Videos</button>
       <div class="toggle-content">
-        <div class="loading">Loading motivational videos...</div>
+        <div class="loading">Click to load motivational videos</div>
       </div>
     </section>
   </main>
@@ -222,172 +223,136 @@
   </footer>
 
   <script>
-    // ====== CONFIGURATION ====== (Edit these values)
+    // ====== CONFIGURATION ======
     const CONFIG = {
-      githubUsername: "godfreymumbiacademy",  // Your GitHub username
-      repoName: "GODFREY-MUMBI-ACADEMY-",             // Your repository name
-      branch: "main",                         // Your branch name (main/master)
-      
-      // Folder structure in your repository
-      contentStructure: {
-        videos: "videos",
-        materials: "materials",
-        quizzes: "quizzes"
+      githubUsername: "godfreymumbiacademy",
+      repoName: "GODFREY-MUMBI-ACADEMY-",
+      branch: "main",
+      contentFiles: {
+        videos: "videos.txt",
+        materials: "materials.txt",
+        quizzes: "quizzes.txt"
       },
-      
-      // File extensions to recognize
-      fileTypes: {
-        videos: [".mp4", ".webm", ".youtube"],
-        materials: [".pdf", ".docx", ".pptx"],
-        quizzes: [".pdf", ".quiz"]
-      }
+      // List of all subjects in your dashboard
+      subjects: [
+        "math", "english", "physics", 
+        "chemistry", "biology", "study-tips", "motivation"
+      ]
     };
 
-    // ====== AUTOMATIC CONTENT FETCHING ======
-    async function fetchContent() {
+    // ====== CONTENT FETCHING ======
+    async function fetchContent(subject, contentType) {
+      const button = document.querySelector(`.${subject} .toggle-button:contains("${contentType}")`);
+      const container = button.nextElementSibling;
+      
       try {
-        // Show loading state in all sections
-        document.querySelectorAll('.loading').forEach(el => {
-          el.textContent = "Loading content...";
-        });
+        container.innerHTML = '<div class="loading">Loading...</div>';
         
-        // Fetch repository structure
-        const apiUrl = `https://api.github.com/repos/${CONFIG.githubUsername}/${CONFIG.repoName}/git/trees/${CONFIG.branch}?recursive=1`;
-        const response = await fetch(apiUrl);
-        const data = await response.json();
+        const filePath = `${subject}/${CONFIG.contentFiles[contentType]}`;
+        const rawUrl = `https://raw.githubusercontent.com/${CONFIG.githubUsername}/${CONFIG.repoName}/${CONFIG.branch}/${filePath}`;
         
-        if (!data.tree) throw new Error("Failed to fetch repository structure");
+        const response = await fetch(rawUrl);
+        if (!response.ok) throw new Error("File not found");
         
-        // Organize files by subject and type
-        const organizedContent = {};
+        const text = await response.text();
+        const links = text.split('\n')
+          .map(line => line.trim())
+          .filter(line => line && !line.startsWith('#'));
         
-        data.tree.forEach(item => {
-          if (item.type !== "blob") return; // Skip folders
-          
-          // Detect subject from path (e.g., "math/videos/file.mp4" → "math")
-          const subjectMatch = item.path.match(/([^\/]+)\//);
-          if (!subjectMatch) return;
-          
-          const subject = subjectMatch[1].toLowerCase();
-          if (!document.querySelector(`.${subject}`)) return;
-          
-          // Detect content type (videos/materials/quizzes)
-          let contentType = null;
-          for (const [type, folder] of Object.entries(CONFIG.contentStructure)) {
-            if (item.path.includes(`/${folder}/`)) {
-              contentType = type;
-              break;
-            }
-          }
-          if (!contentType) return;
-          
-          // Check file extension
-          const fileExt = item.path.substring(item.path.lastIndexOf('.')).toLowerCase();
-          if (!CONFIG.fileTypes[contentType].includes(fileExt)) return;
-          
-          // Add to organized content
-          if (!organizedContent[subject]) organizedContent[subject] = {};
-          if (!organizedContent[subject][contentType]) organizedContent[subject][contentType] = [];
-          
-          organizedContent[subject][contentType].push({
-            name: item.path.split('/').pop(),
-            url: `https://raw.githubusercontent.com/${CONFIG.githubUsername}/${CONFIG.repoName}/${CONFIG.branch}/${item.path}`,
-            path: item.path
-          });
-        });
-        
-        // Update the dashboard
-        updateDashboard(organizedContent);
+        renderContent(subject, contentType, links, container);
         
       } catch (error) {
-        console.error("Error fetching content:", error);
-        document.querySelectorAll('.loading').forEach(el => {
-          el.textContent = "Error loading content. Please try again later.";
-        });
+        console.error(`Error loading ${subject} ${contentType}:`, error);
+        container.innerHTML = '<div class="loading">Content not available</div>';
       }
     }
 
-    // ====== UPDATE DASHBOARD DISPLAY ======
-    function updateDashboard(content) {
-      // For each subject with content
-      Object.keys(content).forEach(subject => {
-        const section = document.querySelector(`.${subject}`);
-        if (!section) return;
-        
-        // For each content type (videos/materials/quizzes)
-        Object.keys(content[subject]).forEach(contentType => {
-          // Find matching button and container
-          const button = [...section.querySelectorAll(".toggle-button")].find(btn => 
-            (contentType === "videos" && btn.textContent.includes("Videos")) ||
-            (contentType === "materials" && btn.textContent.includes("Materials")) ||
-            (contentType === "quizzes" && btn.textContent.includes("Test Yourself"))
-          );
-          
-          if (!button) return;
-          
-          const container = button.nextElementSibling;
-          const items = content[subject][contentType];
-          
-          // Generate HTML based on content type
-          let html = "";
-          if (contentType === "videos") {
-            items.forEach(item => {
-              // Handle YouTube links (.youtube files)
-              if (item.name.endsWith(".youtube")) {
-                const videoId = item.name.replace(".youtube", "");
-                html += `
-                  <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/${videoId}" 
-                            frameborder="0" 
-                            allowfullscreen></iframe>
-                  </div>
-                `;
-              } 
-              // Handle direct video files
-              else {
-                html += `
-                  <div class="video-container">
-                    <video controls style="width:100%;">
-                      <source src="${item.url}" type="video/${item.name.split('.').pop()}">
-                    </video>
-                  </div>
-                `;
-              }
-            });
+    // ====== CONTENT RENDERER ======
+    function renderContent(subject, contentType, links, container) {
+      let html = "";
+      
+      if (links.length === 0) {
+        html = "<p>No content available yet</p>";
+      } 
+      else if (contentType === "videos") {
+        links.forEach(link => {
+          const youtubeId = extractYouTubeId(link);
+          if (youtubeId) {
+            html += `
+              <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/${youtubeId}" 
+                        frameborder="0" 
+                        allowfullscreen></iframe>
+                <p>${getVideoTitle(link)}</p>
+              </div>
+            `;
           } 
-          // For materials and quizzes
-          else {
-            html = "<ul>";
-            items.forEach(item => {
-              const displayName = item.name.replace(/\.[^/.]+$/, "").replace(/[-_]/g, " ");
-              html += `<li><a href="${item.url}" target="_blank">${displayName}</a></li>`;
-            });
-            html += "</ul>";
+          else if (link.match(/\.(mp4|webm)$/i)) {
+            html += `
+              <div class="video-container">
+                <video controls>
+                  <source src="${link}" type="video/${link.split('.').pop()}">
+                </video>
+                <p>${link.split('/').pop()}</p>
+              </div>
+            `;
           }
-          
-          container.innerHTML = items.length > 0 ? html : "<p>No content found for this section.</p>";
         });
-      });
+      } 
+      else {
+        html = "<ul>";
+        links.forEach(link => {
+          const displayName = link.split('/').pop().replace(/\.[^/.]+$/, "").replace(/[-_]/g, " ");
+          html += `<li><a href="${link}" target="_blank">${displayName}</a></li>`;
+        });
+        html += "</ul>";
+      }
+      
+      container.innerHTML = html;
     }
 
-    // ====== TOGGLE SECTIONS ======
+    // Helper to extract YouTube ID
+    function extractYouTubeId(url) {
+      const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+      const match = url.match(regExp);
+      return (match && match[2].length === 11) ? match[2] : null;
+    }
+
+    // Helper to get video title from URL
+    function getVideoTitle(url) {
+      try {
+        return new URL(url).searchParams.get("v") || 
+               url.split('/').pop().replace(/\.[^/.]+$/, "").replace(/[-_]/g, " ");
+      } catch {
+        return "Video";
+      }
+    }
+
+    // ====== TOGGLE SYSTEM ======
     function toggleContent(button) {
       const content = button.nextElementSibling;
       content.style.display = content.style.display === "block" ? "none" : "block";
       
-      // If opening and content isn't loaded yet
       if (content.style.display === "block" && content.querySelector(".loading")) {
-        fetchContent();
+        const subject = button.closest('.subject-section').classList[1];
+        const contentType = button.textContent.includes("Videos") ? "videos" :
+                           button.textContent.includes("Materials") ? "materials" :
+                           "quizzes";
+        fetchContent(subject, contentType);
       }
     }
 
-    // ====== INITIALIZE ======
+    // Initialize
     document.addEventListener("DOMContentLoaded", function() {
-      // Load content for any already open sections
-      const openSections = document.querySelectorAll(".toggle-content[style='display: block;']");
-      openSections.forEach(section => {
-        if (section.querySelector(".loading")) {
-          fetchContent();
+      // Preload any already open sections
+      document.querySelectorAll('.toggle-content[style="display: block;"]').forEach(container => {
+        if (container.querySelector(".loading")) {
+          const button = container.previousElementSibling;
+          const subject = button.closest('.subject-section').classList[1];
+          const contentType = button.textContent.includes("Videos") ? "videos" :
+                             button.textContent.includes("Materials") ? "materials" :
+                             "quizzes";
+          fetchContent(subject, contentType);
         }
       });
     });
